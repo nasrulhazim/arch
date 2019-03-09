@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
 use Illuminate\Support\Str;
 
 class RolesAndPermissionsSeeder extends Seeder
@@ -25,7 +24,7 @@ class RolesAndPermissionsSeeder extends Seeder
         $permissions->each(function ($permission) use ($actions) {
             $actions->each(function ($action) use ($permission) {
                 config('permission.models.permission')::updateOrCreate([
-                    'name' => Str::kebab($action . '-' . $permission)
+                    'name' => Str::kebab($action . '-' . $permission),
                 ]);
             });
         });

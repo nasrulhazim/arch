@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Horizon Path
@@ -81,8 +80,8 @@ return [
     */
 
     'trim' => [
-        'recent' => 60,
-        'failed' => 10080,
+        'recent'    => 60,
+        'failed'    => 10080,
         'monitored' => 10080,
     ],
 
@@ -129,20 +128,20 @@ return [
         'production' => [
             'supervisor-1' => [
                 'connection' => 'redis',
-                'queue' => ['default'],
-                'balance' => 'simple',
-                'processes' => 10,
-                'tries' => 3,
+                'queue'      => ['default'],
+                'balance'    => 'simple',
+                'processes'  => 10,
+                'tries'      => 3,
             ],
         ],
 
         'local' => [
             'supervisor-1' => [
                 'connection' => 'redis',
-                'queue' => ['default'],
-                'balance' => 'simple',
-                'processes' => 3,
-                'tries' => 3,
+                'queue'      => ['default'],
+                'balance'    => 'simple',
+                'processes'  => 3,
+                'tries'      => 3,
             ],
         ],
     ],

@@ -3,7 +3,7 @@
 return [
     'roles' => [
         'Superadmin',
-        'User'
+        'User',
     ],
     'permissions' => [
         'log',
@@ -34,7 +34,7 @@ return [
         ],
         'profile' => [
             'Superadmin' => ['see-all', 'see-one', 'edit', 'update'],
-            'User' => ['see-all', 'see-one', 'edit', 'update'],
+            'User'       => ['see-all', 'see-one', 'edit', 'update'],
         ],
     ],
 ];

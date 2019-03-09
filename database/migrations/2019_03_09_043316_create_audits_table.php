@@ -8,8 +8,6 @@ class CreateAuditsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
     public function up()
     {
@@ -26,15 +24,13 @@ class CreateAuditsTable extends Migration
             $table->string('user_agent')->nullable();
             $table->string('tags')->nullable();
             $table->timestamps();
-			
+
             $table->index(['user_id', 'user_type']);
         });
     }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
     public function down()
     {

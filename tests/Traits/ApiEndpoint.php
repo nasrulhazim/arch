@@ -6,10 +6,11 @@ trait ApiEndpoint
 {
     /**
      * Call API Endpoint.
-     * 
-     * @param  string $uri    
-     * @param  string $method 
-     * @param  array  $data   
+     *
+     * @param string $uri
+     * @param string $method
+     * @param array  $data
+     *
      * @return string|object
      */
     public function apiEndpoint($uri, $method = 'GET', $data = [])
@@ -18,8 +19,9 @@ trait ApiEndpoint
     }
 
     /**
-     * Get API Headers
-     * @return array 
+     * Get API Headers.
+     *
+     * @return array
      */
     public function getApiHeaders()
     {
@@ -28,12 +30,13 @@ trait ApiEndpoint
 
     /**
      * Assert API Response.
-     * 
-     * @param  string $uri      
-     * @param  string $expected 
-     * @param  string $method   
-     * @param  array  $data     
-     * @return string           
+     *
+     * @param string $uri
+     * @param string $expected
+     * @param string $method
+     * @param array  $data
+     *
+     * @return string
      */
     public function assertApiResponse($uri, $expected, $method = 'GET', $data = [])
     {

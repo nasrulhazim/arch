@@ -1,6 +1,5 @@
 <?php
 
-
 return [
     'sequence_length' => env('HELPER_SEQUENCE_LENGTH', 6),
     'abbrv'           => [

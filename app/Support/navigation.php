@@ -7,8 +7,8 @@ if (! function_exists('isActiveNav')) {
     function isActiveNav($route_names)
     {
         return \Illuminate\Support\Str::contains(
-        	request()->route()->getName(), 
-        	$route_names
+            request()->route()->getName(),
+            $route_names
         );
     }
 }

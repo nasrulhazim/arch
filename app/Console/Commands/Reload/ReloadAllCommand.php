@@ -38,7 +38,7 @@ class ReloadAllCommand extends Command
     {
         $this->call('reload:cache');
         $this->call('reload:db');
-        
+
         if ($this->option('dev')) {
             $this->call('seed:dev');
         }

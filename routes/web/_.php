@@ -14,7 +14,7 @@
 Route::get('/', 'WelcomeController')->name('landing-page');
 
 Auth::routes([
-	'verify' => config('auth.verify')
+    'verify' => config('auth.verify'),
 ]);
 
 Route::get('/home', 'HomeController@index')->name('home');
