@@ -53,7 +53,12 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::middleware('web')
              ->namespace($this->namespace)
-             ->group(base_path('routes/web.php'));
+             ->group(function () {
+                 collect(glob(base_path('/routes/web/*.php')))
+                    ->each(function ($path) {
+                        require $path;
+                    });
+             });
     }
 
     /**
@@ -67,7 +72,13 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::prefix('api')
              ->middleware('api')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/api.php'));
+             ->as('api.')
+             ->namespace($this->namespace . '\Api')
+             ->group(function () {
+                 collect(glob(base_path('/routes/api/*.php')))
+                    ->each(function ($path) {
+                        require $path;
+                    });
+             });
     }
 }

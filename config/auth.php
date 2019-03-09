@@ -2,6 +2,11 @@
 
 return [
 
+    /**
+     * Set Account Verification Require to Login.
+     */
+    'verify' => env('AUTH_VERIFY', false),
+
     /*
     |--------------------------------------------------------------------------
     | Authentication Defaults
@@ -68,7 +73,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\Models\User::class,
         ],
 
         // 'users' => [
