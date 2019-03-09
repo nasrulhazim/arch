@@ -19,6 +19,8 @@
         "doctrine/dbal": "^2.9",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.8.*",
+        "laravel/horizon": "^3.0",
+        "laravel/telescope": "^2.0",
         "laravel/tinker": "^1.0",
         "owen-it/laravel-auditing": "^9.0",
         "predis/predis": "^1.1",
