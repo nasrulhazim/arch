@@ -1,10 +1,6 @@
 <?php
 
 return [
-    /*
-     * Set Account Verification Require to Login.
-     */
-    'verify' => env('AUTH_VERIFY', false),
 
     /*
     |--------------------------------------------------------------------------
