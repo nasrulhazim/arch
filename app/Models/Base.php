@@ -8,4 +8,8 @@ use OwenIt\Auditing\Contracts\Auditable;
 class Base extends Model implements Auditable
 {
     use \OwenIt\Auditing\Auditable;
+
+    protected $guarded = [
+        'id',
+    ];
 }

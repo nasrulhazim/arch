@@ -19,7 +19,7 @@
         @isset($required) required @endisset autofocus
         @isset($onkeyup) onkeyup="{{ $onkeyup }}" @endisset
         @isset($step) step="{{ $step }}" @endisset
-        @isset($value) value="{{ old(\Illuminate\Support\Str::snake($label), $default_value ?? '') }}" @endisset
+        @isset($value) value="{{ old(\Illuminate\Support\Str::snake($label), $value ?? '') }}" @endisset
         @isset($help) aria-describedby="{{ \Illuminate\Support\Str::snake($label) }}_help" @endisset>
         @inputHelp(['help' => isset($help) ?? false, 'label' => isset($label) ?? ''])
         @inputError(['key' => isset($label) ?? ''])

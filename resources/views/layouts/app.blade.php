@@ -1,5 +1,5 @@
 @extends('layouts.base')
 
 @section('navigation')
-    @include('partials.navigation-top')
+    @include('layouts.partials.navigation-top')
 @endsection 

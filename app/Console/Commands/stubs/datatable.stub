@@ -1,0 +1,44 @@
+<?php
+
+namespace DummyNamespace;
+
+use Illuminate\Http\Request;
+
+class DummyClass extends Datatable
+{
+    /**
+     * Searchable fields.
+     * @var array
+     */
+    protected $searchable = DummyColumns;
+
+    /**
+     * Orderable fields.
+     * @var array
+     */
+    protected $orderable = DummyColumns;
+
+    /**
+     * Select Fields
+     */
+    protected $select = DummyColumns;
+
+    /**
+     * Map Fields.
+     * @param  \Illuminate\Database\Eloquent\Model $row 
+     * @return array
+     */
+    public function map($row): array
+    {
+        return DummyMap;
+    }
+
+    /**
+     * Get FQCN of the model.
+     * @return string
+     */
+    public function getModel(): string
+    {
+        return \DummyModelFull::class;
+    }
+}

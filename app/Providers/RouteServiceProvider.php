@@ -30,7 +30,7 @@ class RouteServiceProvider extends ServiceProvider
     public function map()
     {
         $this->mapApiRoutes();
-
+        $this->mapDatatableRoutes();
         $this->mapWebRoutes();
     }
 
@@ -64,6 +64,25 @@ class RouteServiceProvider extends ServiceProvider
              ->namespace($this->namespace . '\Api')
              ->group(function () {
                  collect(glob(base_path('/routes/api/*.php')))
+                    ->each(function ($path) {
+                        require $path;
+                    });
+             });
+    }
+
+    /**
+     * Define the "api" routes for the application.
+     *
+     * These routes are typically stateless.
+     */
+    protected function mapDatatableRoutes()
+    {
+        Route::prefix('dt')
+             ->middleware('api')
+             ->as('dt.')
+             ->namespace('App\Http\Datatables')
+             ->group(function () {
+                 collect(glob(base_path('/routes/dt/*.php')))
                     ->each(function ($path) {
                         require $path;
                     });

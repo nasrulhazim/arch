@@ -17,9 +17,9 @@
         @isset($help) aria-describedby="{{ \Illuminate\Support\Str::snake($label) }}_help" @endisset>
       @foreach ($options as $option)
           <option 
-            {{ isset($selected) && ($selected == $option->{{ $key ?? 'id' }}) ? 'selected' : '' }}
-            value="{{ $option->{{ $key ?? 'id' }} }}">
-              {{ __($option->{{ $value ?? 'name' }}) }}
+            {{ isset($selected) && ($selected == $option->{ $key ?? 'id'}) ? 'selected' : '' }}
+            value="{{ $option->{$key ?? 'id'} }}">
+              {{ __($option->{$value ?? 'name'}) }}
           </option>
       @endforeach
     </select>

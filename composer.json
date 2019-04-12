@@ -30,7 +30,10 @@
         "spatie/laravel-medialibrary": "^7.6",
         "spatie/laravel-permission": "^2.36",
         "spatie/laravel-responsecache": "^5.0",
-        "tightenco/ziggy": "^0.6.9"
+        "tightenco/ziggy": "^0.6.9",
+        "uxweb/sweet-alert": "^2.0",
+        "yajra/laravel-datatables": "^1.0",
+        "yajra/laravel-datatables-oracle": "~9.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",
@@ -49,7 +52,9 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "dont-discover": [
+               "laravel/dusk"
+            ]
         }
     },
     "autoload": {

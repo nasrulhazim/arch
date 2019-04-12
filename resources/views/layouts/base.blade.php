@@ -15,6 +15,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @include('layouts.partials.asset-font-awesome')
     @stack('styles')
 </head>
 <body>
@@ -25,9 +26,17 @@
             @yield('content')
         </main>
     </div>
+
+    <div class="row">
+        <div class="col text-center">
+            <p class="text-muted">Copyright &copy; {{ date('Y') }} {{ config('app.name') }}</p>
+        </div>
+    </div>
     
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/sweetalert.min.js') }}"></script>
+    @include('sweet::alert')
     @routes
     @stack('scripts')
 </body>

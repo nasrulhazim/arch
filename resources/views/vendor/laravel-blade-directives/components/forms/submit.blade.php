@@ -1,5 +1,5 @@
 <div class="btn-group">
-	<button type="submit" class="btn btn-sm btn-primary m-r-5">
+	<button type="submit" class="btn btn-dark m-r-5">
 		{{ __($label) }}
 	</button>
 </div>

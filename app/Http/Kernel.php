@@ -42,7 +42,9 @@ class Kernel extends HttpKernel
             \RenatoMarinho\LaravelPageSpeed\Middleware\RemoveComments::class,
             \RenatoMarinho\LaravelPageSpeed\Middleware\TrimUrls::class,
             \RenatoMarinho\LaravelPageSpeed\Middleware\RemoveQuotes::class,
-            \RenatoMarinho\LaravelPageSpeed\Middleware\CollapseWhitespace::class,
+            // \RenatoMarinho\LaravelPageSpeed\Middleware\CollapseWhitespace::class,
+            \UxWeb\SweetAlert\ConvertMessagesIntoSweetAlert::class,
+            \Laravel\Passport\Http\Middleware\CreateFreshApiToken::class,
         ],
 
         'api' => [

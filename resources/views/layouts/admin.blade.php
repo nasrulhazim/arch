@@ -1,15 +1,12 @@
 @extends('layouts.app')
 
 @section('navigation')
-    @include('partials.navigation-top')
-@endsection 
-
-@section('content')
-    @container 
+    @include('layouts.partials.navigation-top')
+    @container
         @row 
             @col 
-                {{ Breadcrumbs::render() }}
+              {{ Breadcrumbs::render() }}  
             @endcol
         @endrow
     @endcontainer
-@endsection
+@endsection 

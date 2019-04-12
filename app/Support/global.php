@@ -11,3 +11,23 @@ if (! function_exists('locales')) {
         });
     }
 }
+
+/*
+ * Get gravatar image if any.
+ */
+if (! function_exists('gravatar')) {
+    function gravatar($size = 36)
+    {
+        return 'https://www.gravatar.com/avatar/' . md5(auth()->user()->email) . '?s=' . $size;
+    }
+}
+
+/*
+ * Get authenticated user object.
+ */
+if (! function_exists('user')) {
+    function user($guard = 'web')
+    {
+        return auth()->guard($guard)->user();
+    }
+}

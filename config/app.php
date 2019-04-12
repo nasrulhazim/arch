@@ -12,7 +12,9 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Arch'),
+
+    'description' => env('APP_DESCRIPTION', 'Arch, pre-built admin panel.'),
 
     /*
     |--------------------------------------------------------------------------

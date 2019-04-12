@@ -11,4 +11,7 @@
 |
 */
 
-Route::middleware('auth:api')->get('/user', 'UserController')->name('user.profile');
+Route::middleware('auth:api')->group(function () {
+    Route::get('/user', 'UserController@profile')->name('user.profile');
+    Route::delete('/user/{user}', 'UserController@destroy')->name('user.destroy');
+});
