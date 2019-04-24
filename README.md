@@ -24,6 +24,40 @@ Laravel    | Arch
 $ composer create-project nasrulhazim/arch project-name --prefer-dist
 ```
 
+## Development
+
+### Available artisan commands for development
+
+Reload all caches:
+
+```
+$ php artisan reload:cache
+```
+
+Reload database and seed:
+
+```
+$ php artisan reload:db
+```
+
+Seed development data:
+
+```
+$ php artisan seed:dev
+```
+
+Create transformer class:
+
+```
+$ php artisan make:transformer UserTransformer Models\\User
+```
+
+Create datatable class:
+
+```
+$ php artisan make:dt UserDt Models\\User Datatable\\UserTransformer
+```
+
 ## Contributing to the Arch
 
 Contributions can be made to the Arch's respective component repositories:
