@@ -1,0 +1,21 @@
+<?php
+
+namespace DummyNamespace;
+
+use DummyModelFull;
+use League\Fractal\TransformerAbstract;
+
+class DummyClass extends TransformerAbstract
+{
+    /**
+     * @param \DummyModelFull $model
+     *
+     * @return array
+     */
+    public function transform(DummyModelShort $model)
+    {
+        return [
+            'id'   => (int) $model->id,
+        ];
+    }
+}
