@@ -54,8 +54,9 @@ class DatatableMakeCommand extends GeneratorCommand
     protected function getArguments()
     {
         return [
-            ['model', InputArgument::REQUIRED, 'The base model of the datatable.'],
             ['name', InputArgument::REQUIRED, 'The name of the datatable class.'],
+            ['model', InputArgument::REQUIRED, 'The model of the datatable.'],
+            ['transformer', InputArgument::REQUIRED, 'The model transformer.'],
         ];
     }
 
@@ -70,9 +71,31 @@ class DatatableMakeCommand extends GeneratorCommand
     {
         $stub = $this->files->get($this->getStub());
         $stub = $this->replaceModel($stub);
+        $stub = $this->replaceTransformer($stub);
 
         return $this->replaceNamespace($stub, $name)
             ->replaceClass($stub, $name);
+    }
+
+    protected function replaceTransformer($stub)
+    {
+        $tranformerFixed = str_replace('/', '\\', $this->argument('transformer'));
+        $tranformerFull  = $this->rootNamespace()  . 'Transformers\\' . $tranformerFixed;
+        $fqdn       = '\\' . $tranformerFull;
+
+        if (! class_exists($fqdn)) {
+            $this->info("Transformer does not exist. Creating {$tranformerFull}.");
+            $this->call('make:transformer', [
+                'name' => $this->argument('transformer'),
+                'model' => $this->argument('model'),
+            ]);
+        }
+    
+        return str_replace(
+            ['DummyTransformerFull'],
+            [$tranformerFull],
+            $stub
+        );
     }
 
     protected function replaceModel($stub)
@@ -80,33 +103,14 @@ class DatatableMakeCommand extends GeneratorCommand
         $modelFixed = str_replace('/', '\\', $this->argument('model'));
         $modelFull  = $this->rootNamespace() . $modelFixed;
         $fqdn       = '\\' . $modelFull;
-        $modelShort = (new \ReflectionClass($fqdn))->getShortName();
 
         if (! class_exists($fqdn)) {
             throw new \Exception("Model $modelFull does not exist");
         }
-
-        $tableName       = (new $fqdn())->getTable();
-        $columns         = Schema::getColumnListing($tableName);
-        $fullColumnNames = array_map(function ($name) use ($tableName) {
-            return  "            '" . $tableName . '.' . $name . "',";
-        }, $columns);
-        $fullColumnNames[] = '        ]';
-        $fixedColumns      = "[\n" . implode("\n", $fullColumnNames);
-
-        $maps = array_map(function ($name) use ($tableName) {
-            return '            $row->' . $name . ',';
-        }, $columns);
-
-        $maps[] = '            // Uncomment below to add an actions column:';
-        $maps[] = "            // view('some.view.path', compact('row'))->__toString(),";
-        $maps[] = '        ]';
-
-        $tableMaps = "[\n" . implode("\n", $maps);
-
+    
         return str_replace(
-            ['DummyModelFull', 'DummyModelShort', 'DummyTableName', 'DummyMap', 'DummyColumns'],
-            [$modelFull, $modelShort, $tableName, $tableMaps, $fixedColumns],
+            ['DummyModelFull'],
+            [$modelFull],
             $stub
         );
     }

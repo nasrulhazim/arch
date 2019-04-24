@@ -2,16 +2,28 @@
 
 namespace App\Models;
 
+use App\Contracts\Datatable as DatatableContract;
+use App\Traits\HasDatatable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 use OwenIt\Auditing\Contracts\Auditable;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable implements Auditable, MustVerifyEmail
+class User extends Authenticatable implements Auditable, MustVerifyEmail, DatatableContract
 {
-    use HasApiTokens, HasRoles, Notifiable, \OwenIt\Auditing\Auditable;
+    use HasDatatable, HasApiTokens, HasRoles, Notifiable, \OwenIt\Auditing\Auditable;
+
+    /**
+     * The attributes that show in datatable.
+     *
+     * @var array
+     */
+    protected $datatable = [
+        'id', 'name', 'email',
+    ];
 
     /**
      * The attributes that are mass assignable.
@@ -19,7 +31,7 @@ class User extends Authenticatable implements Auditable, MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'email_verified_at',
+        'name', 'employee_id', 'email', 'lan_id', 'dept_id', 'level_id', 'designation', 'password', 'email_verified_at',
     ];
 
     /**
@@ -39,4 +51,16 @@ class User extends Authenticatable implements Auditable, MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Datatable scope.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeDatatable(Builder $query): Builder
+    {
+        return $query->select('users.*');
+    }
 }
