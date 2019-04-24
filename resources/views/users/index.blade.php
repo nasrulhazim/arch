@@ -15,11 +15,11 @@
 				@include('components.datatable.datatable', [
 					'table_id' => 'user_dt',
 					'route' => route('dt.users'),
-					'headers' => [
-						'Name',
-						'E-mail',
-						'Actions'
-					]
+					'columns' => [
+						['data' => 'name', 'title' => __('Name'), 'defaultContent' => '-'],
+						['data' => 'email', 'title' => __('E-mail'), 'defaultContent' => '-'],
+						['data' => 'action' , 'name' => null, 'searchable' => false],
+					],
 				])
 			</div>
 	    </div>
