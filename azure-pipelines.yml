@@ -19,14 +19,15 @@ steps:
     sudo update-alternatives --set phpdbg /usr/bin/phpdbg$(phpVersion)
     sudo update-alternatives --set php-cgi /usr/bin/php-cgi$(phpVersion)
     sudo update-alternatives --set phar.phar /usr/bin/phar.phar$(phpVersion)
+    sudo apt-get install php$(phpVersion)-imagick php$(phpVersion)-bcmath php$(phpVersion)-mbstring php$(phpVersion)-curl php$(phpVersion)-gd php$(phpVersion)-zip php$(phpVersion)-dom
     php -version
-  displayName: 'Use PHP version $(phpVersion)'
+  displayName: 'Setting up PHP, version $(phpVersion)'
 
 - script: |
     composer install --no-interaction --prefer-dist
     touch database/database.sqlite
     cp .env.example .env && php artisan key:generate
-  displayName: 'Setting Up'
+  displayName: 'Setting Up Application Environment'
 
 - script: vendor/bin/phpunit --testdox --verbose
-  displayName: 'PHPUnit Test'
+  displayName: 'Running Unit Test'
