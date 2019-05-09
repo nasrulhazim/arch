@@ -1,8 +1,8 @@
+[![Build Status](https://dev.azure.com/nasrulhazim/arch/_apis/build/status/nasrulhazim.arch?branchName=master)](https://dev.azure.com/nasrulhazim/arch/_build/latest?definitionId=4&branchName=master)
+
 ## Arch 
 
 Arch is a pre-build admin panel for web application.
-
-[![Build Status](https://travis-ci.org/nasrulhazim/arch.svg?branch=master)](https://travis-ci.org/nasrulhazim/arch) [![Latest Stable Version](https://poser.pugx.org/nasrulhazim/arch/v/stable)](https://packagist.org/packages/nasrulhazim/arch) [![Total Downloads](https://poser.pugx.org/nasrulhazim/arch/downloads)](https://packagist.org/packages/nasrulhazim/arch) [![License](https://poser.pugx.org/nasrulhazim/arch/license)](https://packagist.org/packages/nasrulhazim/arch)
 
 ## Table of Content
 
