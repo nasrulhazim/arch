@@ -5,14 +5,14 @@ namespace Tests;
 use Facebook\WebDriver\Chrome\ChromeOptions;
 use Facebook\WebDriver\Remote\DesiredCapabilities;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
-use Laravel\Dusk\TestCase as BaseTestCase;
 use Illuminate\Contracts\Console\Kernel;
+use Laravel\Dusk\TestCase as BaseTestCase;
 
 abstract class DuskTestCase extends BaseTestCase
 {
     use CreatesApplication;
 
-     /**
+    /**
      * Creates the application.
      *
      * @return \Illuminate\Foundation\Application
@@ -23,11 +23,11 @@ abstract class DuskTestCase extends BaseTestCase
 
         $app->make(Kernel::class)->bootstrap();
 
-        if(! file_exists(database_path('database.sqlite'))) {
+        if (! file_exists(database_path('database.sqlite'))) {
             touch(database_path('database.sqlite'));
         }
 
-        $app['config']->set('database.default','sqlite');
+        $app['config']->set('database.default', 'sqlite');
         $app['config']->set('database.connections.sqlite.database', database_path('database.sqlite'));
 
         return $app;

@@ -7,7 +7,7 @@ use Tests\TestCase;
 class HelperTest extends TestCase
 {
     public $helpers = [
-        /**
+        /*
          * acl
          */
         'roles',
@@ -15,7 +15,7 @@ class HelperTest extends TestCase
         'role',
         'permission',
 
-        /**
+        /*
          * global
          */
         'isProduction',
@@ -23,8 +23,8 @@ class HelperTest extends TestCase
         'locales',
         'gravatar',
         'user',
-        
-        /**
+
+        /*
          * navigation
          */
         'isActiveNav',

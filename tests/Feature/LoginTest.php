@@ -2,12 +2,12 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class LoginTest extends TestCase
 {
-	use RefreshDatabase;
+    use RefreshDatabase;
 
     /** @test */
     public function main_page_return_status_code_200()
@@ -15,7 +15,7 @@ class LoginTest extends TestCase
         $response = $this->get('/');
 
         $response->assertStatus(200)
-        	->assertSee('Login');
+            ->assertSee('Login');
     }
 
     /** @test */
@@ -25,11 +25,11 @@ class LoginTest extends TestCase
         $this->artisan('seed:dev');
 
         $response = $this->post('/login', [
-        	'email' => 'Superadmin@app.com',
-        	'password' => 'password',
+            'email'    => 'Superadmin@app.com',
+            'password' => 'password',
         ]);
 
         $response->assertStatus(302)
-        	->assertRedirect('/home');
+            ->assertRedirect('/home');
     }
 }

@@ -9,14 +9,14 @@ abstract class Page extends BasePage
 {
     /**
      * URL for the page.
-     * 
+     *
      * @var string
      */
     const URL = '/';
 
     /**
      * Element shortcuts for the page.
-     * 
+     *
      * @var array
      */
     const ELEMENTS = [
@@ -25,7 +25,7 @@ abstract class Page extends BasePage
 
     /**
      * Global element shortcuts for the site.
-     * 
+     *
      * @var array
      */
     const SITE_ELEMENTS = [

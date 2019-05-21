@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -24,7 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-      return view('users.create');
+        return view('users.create');
     }
 
     /**
@@ -36,21 +36,22 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-      $validate = $this->validate($request, [
+        $validate = $this->validate($request, [
             'name'     => ['required'],
             'email'    => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
       ]);
 
-      if($validate){
-         $user = User::create([
-            'name'      => $request->name,
-            'email'     => $request->email,
-            'password'  => \Hash::make($request->password),
+        if ($validate) {
+            $user = User::create([
+            'name'     => $request->name,
+            'email'    => $request->email,
+            'password' => \Hash::make($request->password),
             ]);
-         alert()->success(__('New user created.'));
-         return redirect()->route('users.index');
-      }
+            alert()->success(__('New user created.'));
+
+            return redirect()->route('users.index');
+        }
     }
 
     /**

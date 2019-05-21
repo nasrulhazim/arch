@@ -2,15 +2,15 @@
 
 namespace Tests\Browser;
 
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class LoginTest extends DuskTestCase
 {
-	use DatabaseMigrations;
+    use DatabaseMigrations;
 
-	protected function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -21,7 +21,7 @@ class LoginTest extends DuskTestCase
     /** @test */
     public function it_can_access_landing_page_and_login()
     {
-    	$user = \App\Models\User::where('email', 'Superadmin@app.com')->first();
+        $user = \App\Models\User::where('email', 'Superadmin@app.com')->first();
         $this->browse(function (Browser $browser) use ($user) {
             $browser->visit('/')
                 ->assertSee('Arch')

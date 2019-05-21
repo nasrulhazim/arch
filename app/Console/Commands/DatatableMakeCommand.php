@@ -3,7 +3,6 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\GeneratorCommand;
-use Illuminate\Support\Facades\Schema;
 use Symfony\Component\Console\Input\InputArgument;
 
 class DatatableMakeCommand extends GeneratorCommand
@@ -80,17 +79,17 @@ class DatatableMakeCommand extends GeneratorCommand
     protected function replaceTransformer($stub)
     {
         $tranformerFixed = str_replace('/', '\\', $this->argument('transformer'));
-        $tranformerFull  = $this->rootNamespace()  . 'Transformers\\' . $tranformerFixed;
-        $fqdn       = '\\' . $tranformerFull;
+        $tranformerFull  = $this->rootNamespace() . 'Transformers\\' . $tranformerFixed;
+        $fqdn            = '\\' . $tranformerFull;
 
         if (! class_exists($fqdn)) {
             $this->info("Transformer does not exist. Creating {$tranformerFull}.");
             $this->call('make:transformer', [
-                'name' => $this->argument('transformer'),
+                'name'  => $this->argument('transformer'),
                 'model' => $this->argument('model'),
             ]);
         }
-    
+
         return str_replace(
             ['DummyTransformerFull'],
             [$tranformerFull],
@@ -107,7 +106,7 @@ class DatatableMakeCommand extends GeneratorCommand
         if (! class_exists($fqdn)) {
             throw new \Exception("Model $modelFull does not exist");
         }
-    
+
         return str_replace(
             ['DummyModelFull'],
             [$modelFull],

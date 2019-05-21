@@ -76,7 +76,7 @@ class TransformerMakeCommand extends GeneratorCommand
         if (! class_exists($fqdn)) {
             throw new \Exception("Model $modelFull does not exist");
         }
-    
+
         return str_replace(
             ['DummyModelFull', 'DummyModelShort'],
             [$modelFull, $modelShort],
