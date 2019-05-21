@@ -21,7 +21,7 @@ class UserTransformer extends TransformerAbstract
                 'permission'        => 'user',
                 'view_url'          => route('users.show', $user->id),
                 'edit_url'          => route('users.edit', $user->id),
-                'delete_route_name' => 'api.user.destroy',
+                'delete_url' => route('api.user.destroy', $user->id),
                 'id'                => $user->id,
             ])->__toString(),
         ];
