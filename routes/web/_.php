@@ -14,8 +14,8 @@
 Route::get('/', 'WelcomeController')->name('landing-page');
 
 Auth::routes([
-	'register' => false,
-    'verify' => false,
+	'verify'   => false,
+    'register' => false,
 ]);
 
 Route::middleware(['auth'])->group(function () {
