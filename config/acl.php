@@ -3,6 +3,7 @@
 return [
     'roles' => [
         'Superadmin',
+        'Admin',
         'User',
     ],
     'permissions' => [
