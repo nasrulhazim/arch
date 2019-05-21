@@ -22,13 +22,13 @@ Breadcrumbs::for('users.create', function ($trail) {
     $trail->push('User', route('users.create'));
 });
 
-// Home > User > Edit 
+// Home > User > Edit
 Breadcrumbs::for('users.edit', function ($trail, $user) {
     $trail->parent('users.index');
     $trail->push('Edit', route('users.edit', $user));
 });
 
-// Home > User > Details 
+// Home > User > Details
 Breadcrumbs::for('users.show', function ($trail, $user) {
     $trail->parent('users.index');
     $trail->push('Details', route('users.show', $user));

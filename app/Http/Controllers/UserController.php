@@ -91,14 +91,14 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $this->validate($request, [
-            'name'     => ['required', 'min:3', 'max:255'],
+            'name' => ['required', 'min:3', 'max:255'],
         ]);
 
         $user->update([
             'name' => $request->name,
         ]);
 
-        if($request->has('password') && !empty($request->password)) {
+        if ($request->has('password') && ! empty($request->password)) {
             $this->validate($request, [
                 'password' => ['required', 'string', 'min:8', 'confirmed'],
             ]);

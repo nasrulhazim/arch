@@ -18,11 +18,11 @@ class UserTransformer extends TransformerAbstract
             'name'   => $user->name,
             'email'  => $user->email,
             'action' => view('components.datatable.actions', [
-                'permission'        => 'user',
-                'view_url'          => route('users.show', $user->id),
-                'edit_url'          => route('users.edit', $user->id),
+                'permission' => 'user',
+                'view_url'   => route('users.show', $user->id),
+                'edit_url'   => route('users.edit', $user->id),
                 'delete_url' => route('api.user.destroy', $user->id),
-                'id'                => $user->id,
+                'id'         => $user->id,
             ])->__toString(),
         ];
     }

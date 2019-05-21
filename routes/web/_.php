@@ -14,7 +14,7 @@
 Route::get('/', 'WelcomeController')->name('landing-page');
 
 Auth::routes([
-	'verify'   => false,
+    'verify'   => false,
     'register' => false,
 ]);
 
