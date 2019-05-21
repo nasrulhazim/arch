@@ -1,5 +1,5 @@
 <div class="card">
-    <div class="card-header bg-dark text-light">Security</div>
+    <div class="card-header use App\Processors\Imports">Security</div>
 
     <div class="card-body">
         <form action="{{ route('profile.password.update') }}" method="POST">
@@ -24,7 +24,7 @@
                 </div>
             </div>
 
-            <input type="submit" class="mt-2 btn btn-dark text-light float-right" value="{{ __('Submit') }}">
+            <input type="submit" class="mt-2 btn btn-success  float-right" value="{{ __('Submit') }}">
         </form>
     </div>
 </div>
