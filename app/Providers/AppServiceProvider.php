@@ -11,6 +11,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->registerNonProductionProviders();
     }
 
     /**
@@ -18,5 +19,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+    }
+
+    private function registerNonProductionProviders()
+    {
+        if ('production' == app()->environment()) {
+            return;
+        }
+
+        $this->app->register(\Laravel\Dusk\DuskServiceProvider::class);
     }
 }
