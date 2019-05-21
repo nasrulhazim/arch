@@ -1,4 +1,3 @@
-
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
@@ -8,12 +7,39 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+body {
+	background-color: $body-bg;
+}
+
+.btn {
+	box-shadow: $box-shadow-sm;
+}
+
+.card, .dropdown-menu {
+	box-shadow: $box-shadow;
+}
+
+.card-header {
+	background-color: $white;
+	font-weight: $font-weight-bold !important;
+}
+
+.nav-pills, .nav-link.active, .nav-pills, .nav-link {
+    background-color: transparent !important;
+    color: $gray-900 !important;
+}
+
+.breadcrumb {
+    padding-left: 0px; 
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    color: #fff;
-    background-color: #343a40!important;
-}
+// .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+//     color: #fff;
+//     background-color: #343a40!important;
+// }
+
