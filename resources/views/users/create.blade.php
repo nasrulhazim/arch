@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg-dark text-light">{{ __('Add new user') }}</div>
+                <div class="card-header use App\Processors\Imports">{{ __('Add new user') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('users.store') }}">
@@ -65,7 +65,7 @@
                             <div class="col-md-6 offset-md-4">
                                 <a class="btn btn-link" href="{{ route('users.index') }}">{{ __('Back') }}</a>
 
-                                <button type="submit" class="btn btn-default border-dark">
+                                <button type="submit" class="btn btn-success border-dark">
                                     {{ __('Add') }}</i>
                                 </button>
                             </div>
