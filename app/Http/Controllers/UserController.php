@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -37,18 +38,19 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $validate = $this->validate($request, [
-            'name'     => ['required'],
+            'name'     => ['required', 'min:3', 'max:255'],
             'email'    => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
       ]);
 
         if ($validate) {
             $user = User::create([
-            'name'     => $request->name,
-            'email'    => $request->email,
-            'password' => \Hash::make($request->password),
+                'name'     => $request->name,
+                'email'    => $request->email,
+                'password' => Hash::make($request->password),
             ]);
-            alert()->success(__('New user created.'));
+
+            alert()->success(__('New User Created.'));
 
             return redirect()->route('users.index');
         }
@@ -57,45 +59,68 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param \App\Models\User $user
      *
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
+        return view('users.show', compact('user'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param \App\Models\User $user
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
+        return view('users.edit', compact('user'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param int                      $id
+     * @param \App\Models\User         $$user
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
+        $this->validate($request, [
+            'name'     => ['required', 'min:3', 'max:255'],
+        ]);
+
+        $user->update([
+            'name' => $request->name,
+        ]);
+
+        if($request->has('password') && !empty($request->password)) {
+            $this->validate($request, [
+                'password' => ['required', 'string', 'min:8', 'confirmed'],
+            ]);
+
+            $user->update([
+                'password' => Hash::make($request->password),
+            ]);
+        }
+
+        alert()->success(__('User details updated.'));
+
+        return redirect()->route('users.edit', $user);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param \App\Models\User $user
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
     }
 }

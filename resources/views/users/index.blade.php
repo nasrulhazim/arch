@@ -9,7 +9,9 @@
 			</div>
 		</div>
 		<div class="card">
-			<div class="card-header use App\Processors\Imports">{{ __('Users') }}</div>
+			<div class="card-header">
+				<h5><i class="fas fa-users"></i>  {{ __('Users') }}</h5>
+			</div>
 
 			<div class="card-body">
 				@include('components.datatable.datatable', [
