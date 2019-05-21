@@ -14,10 +14,11 @@
 Route::get('/', 'WelcomeController')->name('landing-page');
 
 Auth::routes([
-    'verify' => true,
+	'register' => false,
+    'verify' => false,
 ]);
 
-Route::middleware(['verified'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('home', 'HomeController@index')->name('home');
     Route::get('profile', 'ProfileController@edit')->name('profile.edit');
     Route::put('profile', 'ProfileController@update')->name('profile.update');
