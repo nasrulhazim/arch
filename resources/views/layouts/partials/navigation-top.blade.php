@@ -26,36 +26,44 @@
                         </li>
                     @endif
                 @else
-                    @can('see-all-user')
-                    <li>
-                        <a class="nav-link  pr-3" href="{{ route('users.index') }}">
-                            <i class="fas fa-users mr-3"></i>{{ __('User') }}
-                        </a>
-                    </li>
-                    @endcan
-                    @can('see-all-audit')
-                        <li>
-                            <a class="nav-link pr-3" href="{{ route('audit.index') }}">
-                                <i class="fas fa-clipboard-list mr-3"></i>{{ __('Audit Trail') }}
+                    @can('see-all-administration')
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdownAdministration" class="nav-link dropdown-toggle" 
+                                href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ __('Administration') }} <span class="caret"></span>
                             </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownAdministration">
+                                @can('see-all-user')
+                                    <a class="dropdown-item" href="{{ route('users.index') }}">
+                                        <i class="fas fa-users mr-3"></i>{{ __('Users') }}
+                                    </a>
+                                @endcan
+
+                                @can('see-all-audit')
+                                    <a class="dropdown-item" href="{{ route('audit.index') }}">
+                                        <i class="fas fa-clipboard-list mr-3"></i>{{ __('Audit Trails') }}
+                                    </a>
+                                @endcan
+
+                            </div>
                         </li>
                     @endcan
-                    <li>
-                        <img class="rounded-circle" src="{{ gravatar(36) }}">
-                    </li>
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdownProfile" class="nav-link dropdown-toggle" 
+                            href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <img class="rounded-circle" src="{{ gravatar(18) }}">
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
                             <a class="dropdown-item" href="{{ route('profile.edit') }}">
-                                {{ __('Profile') }}
+                                <i class="fas fa-address-card mr-3"></i>{{ __('Profile') }}
                             </a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                <i class="fas fa-sign-out-alt mr-3"></i>{{ __('Logout') }}
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
