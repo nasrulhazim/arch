@@ -20,7 +20,7 @@ class UserTest extends TestCase
             ->get('/users')
             ->assertStatus(200)
             ->assertSee('Users')
-            ->assertSee('New User')
+            ->assertSee('New')
             ->assertSee('Name')
             ->assertSee('E-mail');
     }
@@ -35,10 +35,13 @@ class UserTest extends TestCase
             ->actingAs($this->getSuperadmin())
             ->get('/users/create')
             ->assertStatus(200)
-            ->assertSee('Add New User')
+            ->assertSee('New User')
+            ->assertSee('Name')
             ->assertSee('E-Mail Address')
             ->assertSee('Password')
-            ->assertSee('Confirm Password');
+            ->assertSee('Confirm Password')
+            ->assertSee('Cancel')
+            ->assertSee('Create User');
     }
 
     /** @test */
