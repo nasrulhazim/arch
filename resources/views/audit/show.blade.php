@@ -4,13 +4,13 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">
-                    {{ Breadcrumbs::render() }}  
-                    <h5><i class="fas fa-clipboard-list mr-2"></i>{{ __('Audit Trails') }}</h5>
-                </div>
-
-                <div class="card-body">
+            @card
+                @cardheader([
+                    'title' => __('Audit Trail Details'),
+                    'icon' => 'fas fa-clipboard-list mr-2',
+                    'breadcrumb' => true
+                ])
+                @cardbody 
                     <table class="table">
                         <tr>
                             <th style="width: 20%;">{{ __('Type') }}</th>
@@ -45,9 +45,13 @@
                             </td>
                         </tr>
                     </table>
-                    <a href="{{ route('audit.index') }}" class="btn btn-default">{{ __('Back') }}</a>
-                </div>
-            </div>
+
+                    @buttonlink([
+                        'label' => 'Back',
+                        'url' => route('audit.index'),
+                    ])
+                @endcardbody
+            @endcard
         </div>
     </div>
 </div>

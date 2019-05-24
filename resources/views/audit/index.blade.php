@@ -3,13 +3,13 @@
 @section('content')
 	@include('components.datatable.asset')
 	<div class="container">
-		<div class="card">
-			<div class="card-header">
-				{{ Breadcrumbs::render() }}  
-				<h5><i class="fas fa-clipboard-list mr-2"></i>{{ __('Audit Trails') }}</h5>
-			</div>
-
-			<div class="card-body">
+		@card
+			@cardheader([
+				'title' => __('Audit Trails'),
+				'icon' => 'fas fa-clipboard-list mr-2',
+				'breadcrumb' => true
+			])
+			@cardbody 
 				@include('components.datatable.datatable', [
 					'table_id' => 'audit_dt',
 					'route' => route('dt.audits'),
@@ -20,7 +20,7 @@
 						['data' => 'action' , 'title' => __('Actions'), 'name' => null, 'searchable' => false, 'orderable' => false],
 					],
 				])
-			</div>
-	    </div>
+			@endcardbody
+		@endcard
 	</div>
 @endsection
