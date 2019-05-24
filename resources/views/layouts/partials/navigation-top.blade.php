@@ -26,9 +26,20 @@
                         </li>
                     @endif
                 @else
+                    @can('see-all-user')
                     <li>
-                        <a class="nav-link  pr-3" href="{{ route('users.index') }}">{{ __('User') }}</a>
+                        <a class="nav-link  pr-3" href="{{ route('users.index') }}">
+                            <i class="fas fa-users mr-3"></i>{{ __('User') }}
+                        </a>
                     </li>
+                    @endcan
+                    @can('see-all-audit')
+                        <li>
+                            <a class="nav-link pr-3" href="{{ route('audit.index') }}">
+                                <i class="fas fa-clipboard-list mr-3"></i>{{ __('Audit Trail') }}
+                            </a>
+                        </li>
+                    @endcan
                     <li>
                         <img class="rounded-circle" src="{{ gravatar(36) }}">
                     </li>

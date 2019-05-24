@@ -7,17 +7,22 @@ return [
         'User',
     ],
     'permissions' => [
+        'administration',
         'log',
         'user',
         'role',
         'permission',
         'setting',
         'profile',
+        'audit',
     ],
     'actions' => [
         'see-all', 'see-one', 'create', 'edit', 'update', 'destroy',
     ],
     'matrices' => [
+        'administration' => [
+            'Superadmin' => ['see-all', 'see-one'],
+        ],
         'log' => [
             'Superadmin' => ['see-all', 'see-one'],
         ],
@@ -36,6 +41,9 @@ return [
         'profile' => [
             'Superadmin' => ['see-all', 'see-one', 'edit', 'update'],
             'User'       => ['see-all', 'see-one', 'edit', 'update'],
+        ],
+        'audit' => [
+            'Superadmin' => ['see-all', 'see-one'],
         ],
     ],
 ];

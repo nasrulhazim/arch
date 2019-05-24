@@ -10,7 +10,7 @@ return [
     |
     */
 
-    'implementation' => OwenIt\Auditing\Models\Audit::class,
+    'implementation' => \App\Models\Audit::class,
 
     /*
     |--------------------------------------------------------------------------
