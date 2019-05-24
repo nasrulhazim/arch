@@ -24,8 +24,8 @@ Route::middleware(['auth'])->group(function () {
     Route::put('profile', 'ProfileController@update')->name('profile.update');
     Route::put('password', 'PasswordController')->name('profile.password.update');
 
-    /**
-     * User 
+    /*
+     * User
      */
     Route::resource('users', 'UserController');
 

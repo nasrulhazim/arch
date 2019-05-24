@@ -15,7 +15,7 @@ class AuditTransformer extends TransformerAbstract
     public function transform(Audit $model)
     {
         return [
-            'id'   => (int) $model->id,
+            'id' => (int) $model->id,
         ];
     }
 }

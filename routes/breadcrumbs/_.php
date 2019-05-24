@@ -34,7 +34,6 @@ Breadcrumbs::for('users.show', function ($trail, $user) {
     $trail->push(__('Details'), route('users.show', $user));
 });
 
-
 // Home > Audit Trail
 Breadcrumbs::for('audit.index', function ($trail) {
     $trail->parent('home');

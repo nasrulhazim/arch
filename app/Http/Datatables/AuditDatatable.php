@@ -18,4 +18,3 @@ class AuditDatatable extends Datatable
      */
     protected $transformer = '\App\Transformers\Datatable\AuditTransformer';
 }
-

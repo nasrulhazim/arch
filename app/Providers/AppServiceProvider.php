@@ -34,7 +34,7 @@ class AppServiceProvider extends ServiceProvider
 
     private function bootBladeDirectives()
     {
-        /**
+        /*
          * Cards
          */
         Blade::component('components.cards.base', 'card');
@@ -42,7 +42,7 @@ class AppServiceProvider extends ServiceProvider
         Blade::component('components.cards.footer', 'cardfooter');
         Blade::include('components.cards.header', 'cardheader');
 
-        /**
+        /*
          * Buttons
          */
         Blade::include('components.buttons.base', 'buttonbase');
@@ -52,7 +52,7 @@ class AppServiceProvider extends ServiceProvider
         Blade::include('components.buttons.link', 'buttonlink');
         Blade::include('components.buttons.submit', 'buttonsubmit');
 
-        /**
+        /*
          * Misc.
          */
         Blade::include('components.misc.breadcrumb', 'breadcrumb');
