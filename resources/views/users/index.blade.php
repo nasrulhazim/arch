@@ -5,15 +5,19 @@
 	<div class="container">
 		<div class="row pb-3">
 			<div class="col">
-				<a href="{{ route('users.create') }}" class="btn btn-success float-right">{{ __('New User') }}</a>
+				@buttonnew([
+					'url' => route('users.create'),
+					'classes' => 'btn btn-success float-right'
+				])
 			</div>
 		</div>
-		<div class="card">
-			<div class="card-header">
-				<h5><i class="fas fa-users"></i>  {{ __('Users') }}</h5>
-			</div>
-
-			<div class="card-body">
+		@card
+			@cardheader([
+				'title' => __('Users'),
+				'icon' => 'fas fa-users mr-2',
+				'breadcrumb' => true
+			])
+			@cardbody 
 				@include('components.datatable.datatable', [
 					'table_id' => 'user_dt',
 					'route' => route('dt.users'),
@@ -23,7 +27,7 @@
 						['data' => 'action' , 'name' => null, 'searchable' => false],
 					],
 				])
-			</div>
-	    </div>
+			@endcardbody
+	    @endcard
 	</div>
 @endsection

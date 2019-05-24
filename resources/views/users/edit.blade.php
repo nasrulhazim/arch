@@ -4,19 +4,21 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header ">
-                    <h5><i class="fas fa-user"></i>  {{ __('Update User') }}</h5>
-                </div>
+            @card
+                @cardheader([
+                    'title' => __('Edit User'),
+                    'icon' => 'fas fa-user mr-2',
+                    'breadcrumb' => true
+                ])
 
-                <div class="card-body">
+                @cardbody
                     <form method="POST" action="{{ route('users.update',$user->id)}}">
                         @csrf
                         @method('PATCH')
 
                         @input([
                             'name' => 'name',
-                            'label' => 'Name',
+                            'label' => __('Name'),
                             'label_class' => 'col-md-4 col-form-label text-md-right',
                             'input_classes' => 'col-md-6',
                             'input_form_class' => 'form-group row',
@@ -26,7 +28,7 @@
 
                         @input([
                             'name' => 'email',
-                            'label' => 'E-Mail Address',
+                            'label' => __('E-Mail Address'),
                             'label_class' => 'col-md-4 col-form-label text-md-right',
                             'input_classes' => 'col-md-6',
                             'input_form_class' => 'form-group row',
@@ -37,7 +39,7 @@
 
                         @input([
                             'name' => 'password',
-                            'label' => 'Password',
+                            'label' => __('Password'),
                             'label_class' => 'col-md-4 col-form-label text-md-right',
                             'input_classes' => 'col-md-6',
                             'input_form_class' => 'form-group row',
@@ -46,20 +48,26 @@
 
                         @input([
                             'name' => 'password_confirmation',
-                            'label' => 'Password Confirmation',
+                            'label' => __('Password Confirmation'),
                             'label_class' => 'col-md-4 col-form-label text-md-right',
                             'input_classes' => 'col-md-6',
                             'input_form_class' => 'form-group row',
                             'type' => 'password'
                         ])
 
-                        <div class="float-right">
-                            <a class="btn btn-link" href="{{ route('users.index') }}">{{ __('Back') }}</a>
-                            @submit(['label' => 'Update'])
-                        </div>
+                        @buttonlink([
+                            'label' => 'Cancel',
+                            'url' => route('users.show', $user),
+                        ])
+
+                        @buttonsubmit([
+                            'icon' => 'fas fa-save mr-2',
+                            'label' => 'Update',
+                            'classes' => 'btn btn-success float-right'
+                        ])
                     </form>
-                </div>
-            </div>
+                @endcardbody
+            @endcard
         </div>
     </div>
 </div>

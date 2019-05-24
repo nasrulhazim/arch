@@ -4,12 +4,14 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">
-                    <h5><i class="fas fa-user"></i>  {{ __('Add New User') }}</h5>
-                </div>
+            @card
+                @cardheader([
+                    'title' => __('New User'),
+                    'icon' => 'fas fa-user mr-2',
+                    'breadcrumb' => true
+                ])
 
-                <div class="card-body">
+                @cardbody
                     <form method="POST" action="{{ route('users.store') }}">
                         @csrf
 
@@ -62,19 +64,20 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
+                        
+                        @buttonlink([
+                            'label' => 'Cancel',
+                            'url' => route('users.index'),
+                        ])
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <a class="btn btn-link" href="{{ route('users.index') }}">{{ __('Back') }}</a>
-
-                                <button type="submit" class="btn btn-success">
-                                    {{ __('Add') }}</i>
-                                </button>
-                            </div>
-                        </div>
+                        @buttonsubmit([
+                            'label' => 'Create User',
+                            'icon' => 'fas fa-plus mr-2',
+                            'classes' => 'btn btn-primary float-right'
+                        ])
                     </form>
-                </div>
-            </div>
+                @endcardbody
+            @endcard
         </div>
     </div>
 </div>
