@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\GeneratorCommand;
+use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputArgument;
 
 class DatatableMakeCommand extends GeneratorCommand
@@ -50,6 +51,16 @@ class DatatableMakeCommand extends GeneratorCommand
         return __DIR__ . '/stubs/datatable.stub';
     }
 
+    /**
+     * Get the route stub file for the generator.
+     *
+     * @return string
+     */
+    protected function getRouteStub()
+    {
+        return __DIR__ . '/stubs/datatable-route.stub';
+    }
+
     protected function getArguments()
     {
         return [
@@ -72,8 +83,38 @@ class DatatableMakeCommand extends GeneratorCommand
         $stub = $this->replaceModel($stub);
         $stub = $this->replaceTransformer($stub);
 
-        return $this->replaceNamespace($stub, $name)
+        return $this
+            ->replaceRouteStub()
+            ->replaceNamespace($stub, $name)
             ->replaceClass($stub, $name);
+    }
+
+    protected function replaceRouteStub()
+    {
+        $routeStub = $this->files->get($this->getRouteStub());
+        $route     = base_path('routes/dt/_.php');
+
+        $dummyClass     = class_basename(str_replace('/', '\\', $this->argument('name')));
+        $dummyUri       = strtolower(Str::plural(str_replace('Datatable', '', $dummyClass)));
+        $dummyRouteName = Str::kebab($dummyUri);
+
+        $content = str_replace(
+            [
+                'DummyUri',
+                'DummyClass',
+                'DummyRouteName',
+            ],
+            [
+                $dummyUri,
+                $dummyClass,
+                $dummyRouteName,
+            ],
+            $routeStub
+        );
+
+        $this->files->append($route, $content);
+
+        return $this;
     }
 
     protected function replaceTransformer($stub)
