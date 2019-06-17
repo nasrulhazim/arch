@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
 
     private function registerNonProductionProviders()
     {
-        if ('production' == app()->environment()) {
+        if (in_array(app()->environment(), ['production', 'testing', 'dusk'])) {
             return;
         }
 
