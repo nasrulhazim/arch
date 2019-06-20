@@ -24,6 +24,14 @@ Route::middleware(['auth'])->group(function () {
     Route::put('profile', 'ProfileController@update')->name('profile.update');
     Route::put('password', 'PasswordController')->name('profile.password.update');
 
+    if(! isProduction())
+    {
+        /*
+         * Impersonate
+         */
+        Route::impersonate();
+    }
+
     /*
      * User
      */

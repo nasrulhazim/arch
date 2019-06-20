@@ -8,13 +8,16 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Lab404\Impersonate\Models\Impersonate;
 use Laravel\Passport\HasApiTokens;
 use OwenIt\Auditing\Contracts\Auditable;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements Auditable, MustVerifyEmail, DatatableContract
 {
-    use HasDatatable, HasApiTokens, HasRoles, Notifiable, \OwenIt\Auditing\Auditable;
+    use HasDatatable, HasApiTokens, HasRoles, 
+    Notifiable, \OwenIt\Auditing\Auditable,
+    Impersonate;
 
     /**
      * The attributes that show in datatable.

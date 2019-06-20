@@ -26,6 +26,11 @@
                         </li>
                     @endif
                 @else
+                    @impersonating
+                        <li class="nav-item m-1">
+                            <a class="btn btn-sm btn-primary" href="{{ route('impersonate.leave') }}">{{ __('Leave Impersonation') }}</a>
+                        </li>
+                    @endImpersonating
                     @can('see-all-administration')
                         <li class="nav-item dropdown">
                             <a id="navbarDropdownAdministration" class="nav-link dropdown-toggle" 
