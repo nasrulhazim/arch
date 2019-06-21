@@ -16,6 +16,9 @@ mix.js('resources/js/app.js', 'public/js')
 	.copy('node_modules/@fortawesome/fontawesome-free/css/all.min.css', 'public/css/font-awesome.css')
 	.copy('node_modules/@fortawesome/fontawesome-free/js/all.min.js', 'public/js/font-awesome.js')
 	.copy('node_modules/@fortawesome/fontawesome-free/webfonts', 'public/webfonts')
+	.copy('node_modules/trix/dist/trix.css', 'public/css/trix.css')
+	.copy('node_modules/trix/dist/trix.js', 'public/js/trix.js')
+	.copy('node_modules/trix/dist/trix-core.js', 'public/js/trix-core.js')
     .scripts([
         'node_modules/datatables.net/js/jquery.dataTables.js',
         'node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js'

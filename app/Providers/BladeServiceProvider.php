@@ -52,5 +52,11 @@ class BladeServiceProvider extends ServiceProvider
          * Misc.
          */
         Blade::include('components.misc.breadcrumb', 'breadcrumb');
+
+        /*
+         * Trix.
+         */
+        Blade::include('components.trix.asset', 'trixasset');
+        Blade::include('components.trix.editor', 'trixeditor')
     }
 }

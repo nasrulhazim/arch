@@ -4,6 +4,9 @@
     "/js/sweetalert.min.js": "/js/sweetalert.min.js",
     "/css/font-awesome.css": "/css/font-awesome.css",
     "/js/font-awesome.js": "/js/font-awesome.js",
+    "/css/trix.css": "/css/trix.css",
+    "/js/trix.js": "/js/trix.js",
+    "/js/trix-core.js": "/js/trix-core.js",
     "/js/datatable.js": "/js/datatable.js",
     "/css/datatable.css": "/css/datatable.css"
 }
