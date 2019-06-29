@@ -1,6 +1,16 @@
 <?php
 
 /*
+ * Check Is Mail Enabled
+ */
+if (! function_exists('isMailEnabled')) {
+    function isMailEnabled(): bool
+    {
+        return config('mail.enabled') ?? false;
+    }
+}
+
+/*
  * Get Available Locales
  */
 if (! function_exists('locales')) {

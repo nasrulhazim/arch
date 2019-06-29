@@ -20,6 +20,7 @@ class HelperTest extends TestCase
          */
         'isProduction',
         'isTesting',
+        'isMailEnabled',
         'locales',
         'gravatar',
         'user',
