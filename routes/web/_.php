@@ -23,6 +23,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('profile', 'ProfileController@edit')->name('profile.edit');
     Route::put('profile', 'ProfileController@update')->name('profile.update');
     Route::put('password', 'PasswordController')->name('profile.password.update');
+    Route::get('notifications', 'NotificationController')->name('notifications');
 
     if(! isProduction())
     {

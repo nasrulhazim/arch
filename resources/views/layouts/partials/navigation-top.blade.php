@@ -31,6 +31,13 @@
                             <a class="btn btn-sm btn-primary" href="{{ route('impersonate.leave') }}">{{ __('Leave Impersonation') }}</a>
                         </li>
                     @endImpersonating
+                    <li class="nav-item m-1">
+                        <a class="btn btn-sm btn-outline-{{ auth()->user()->unreadNotifications->count() > 0 ? 'danger' : 'primary' }} border-0 shadow-none" 
+                            href="{{ route('notifications') }}">
+                            <i class="far fa-bell"></i>
+                            {{ auth()->user()->unreadNotifications->count() > 0 ? auth()->user()->unreadNotifications->count() : '' }}
+                        </a>
+                    </li>
                     @can('see-all-administration')
                         <li class="nav-item dropdown">
                             <a id="navbarDropdownAdministration" class="nav-link dropdown-toggle" 
