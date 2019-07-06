@@ -24,6 +24,7 @@
     </filter>
     <php>
         <server name="APP_ENV" value="testing"/>
+        <server name="APP_KEY" value="base64:ypQZA9/DJ3AebMdu6pa0JM90gyOY9g2g2h2vRUyeigE="/>
         <server name="TELESCOPE_ENABLED" value="false"/>
         <server name="BCRYPT_ROUNDS" value="4"/>
         <server name="CACHE_DRIVER" value="array"/>
