@@ -1,0 +1,24 @@
+
+// Home > NAME
+Breadcrumbs::for('ROUTE_NAME.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('NAME'), route('ROUTE_NAME.index'));
+});
+
+// Home > NAME > Create
+Breadcrumbs::for('ROUTE_NAME.create', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('NAME'), route('ROUTE_NAME.create'));
+});
+
+// Home > NAME > Edit
+Breadcrumbs::for('ROUTE_NAME.edit', function ($trail, $model) {
+    $trail->parent('ROUTE_NAME.index');
+    $trail->push(__('Edit'), route('ROUTE_NAME.edit', $model));
+});
+
+// Home > NAME > Details
+Breadcrumbs::for('ROUTE_NAME.show', function ($trail, $model) {
+    $trail->parent('ROUTE_NAME.index');
+    $trail->push(__('Details'), route('ROUTE_NAME.show', $model));
+});

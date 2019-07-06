@@ -1,0 +1,23 @@
+@extends('layouts.admin')
+
+@section('content')
+	<div class="container">
+		@card
+			@cardheader([
+				'title' => __('TITLE Details'),
+				'icon' => 'fas fa-seach mr-2',
+				'breadcrumb' => true
+			])
+			@cardbody 
+				@buttonlink([
+                    'url' => route('ROUTE_NAME.index'),
+                ])
+
+                @buttonedit([
+                    'url' => route('ROUTE_NAME.edit', $user),
+                    'classes' => 'btn btn-primary float-right'
+                ])
+			@endcardbody
+		@endcard
+	</div>
+@endsection

@@ -1,0 +1,5 @@
+
+/**
+ * NAME.
+ */
+Route::get('URI', 'NAMEDatatable')->name('ROUTE_NAME');

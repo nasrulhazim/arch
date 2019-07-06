@@ -58,6 +58,18 @@ Create datatable class:
 $ php artisan make:dt UserDt Models\\User Datatable\\UserTransformer
 ```
 
+#### Arch Commands
+
+Currently there is only one command available `arch:page` which create necessary model, migration, factory, seeder, controller for web and API, setting up routes for API, web, datatable and breadcrumb and create all main views - index, show, create, edit and partis/actions.
+
+You just need to run following command to create a page.
+
+You may want to check and update generated files to meet the common practice.
+
+```
+$ php artisan arch:page Module
+```
+
 ## Contributing to the Arch
 
 Contributions can be made to the Arch's respective component repositories:

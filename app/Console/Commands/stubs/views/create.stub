@@ -1,0 +1,25 @@
+@extends('layouts.admin')
+
+@section('content')
+	<div class="container">
+		@card
+			@cardheader([
+				'title' => __('New TITLE'),
+				'icon' => 'fas fa-plus mr-2',
+				'breadcrumb' => true
+			])
+			@cardbody 
+				@buttonlink([
+                    'label' => 'Cancel',
+                    'url' => route('ROUTE_NAME.show', $model),
+                ])
+
+                @buttonsubmit([
+                    'icon' => 'fas fa-save mr-2',
+                    'label' => 'Update',
+                    'classes' => 'btn btn-success float-right'
+                ])
+			@endcardbody
+		@endcard
+	</div>
+@endsection

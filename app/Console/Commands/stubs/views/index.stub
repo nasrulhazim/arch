@@ -1,0 +1,24 @@
+@extends('layouts.admin')
+
+@section('content')
+	@include('components.datatable.asset')
+	<div class="container">
+		@card
+			@cardheader([
+				'title' => __('TITLE'),
+				'icon' => 'fas fa-clipboard-list mr-2',
+				'breadcrumb' => true
+			])
+			@cardbody 
+				@include('components.datatable.datatable', [
+					'table_id' => 'DATATABLE_ID_dt',
+					'route' => route('dt.DATATABLE_ROUTE_NAME'),
+					'columns' => [
+						['data' => 'name', 'title' => __('Name'), 'defaultContent' => '-', 'searchable' => false, 'orderable' => false],
+						['data' => 'action' , 'title' => __('Actions'), 'name' => null, 'searchable' => false, 'orderable' => false],
+					],
+				])
+			@endcardbody
+		@endcard
+	</div>
+@endsection

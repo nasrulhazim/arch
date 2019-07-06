@@ -1,0 +1,7 @@
+
+/**
+ * NAME.
+ *
+ * You may want to move this route to 'auth:api' middleware if it's protected.
+ */
+Route::get('URI', 'CONTROLLER')->name('ROUTE_NAME');
