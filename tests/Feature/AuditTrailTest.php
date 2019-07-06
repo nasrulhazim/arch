@@ -17,7 +17,7 @@ class AuditTrailTest extends TestCase
         ]);
 
         $user = factory(\App\Models\User::class)->create([
-            'email'   => 'Superadmin@app.com',
+            'email' => 'Superadmin@app.com',
         ])->assignRole('Superadmin');
 
         $response = $this->actingAs($user)

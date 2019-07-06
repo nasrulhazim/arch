@@ -15,7 +15,7 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements Auditable, MustVerifyEmail, DatatableContract
 {
-    use HasDatatable, HasApiTokens, HasRoles, 
+    use HasDatatable, HasApiTokens, HasRoles,
     Notifiable, \OwenIt\Auditing\Auditable,
     Impersonate;
 

@@ -25,8 +25,7 @@ Route::middleware(['auth'])->group(function () {
     Route::put('password', 'PasswordController')->name('profile.password.update');
     Route::get('notifications', 'NotificationController')->name('notifications');
 
-    if(! isProduction())
-    {
+    if (! isProduction()) {
         /*
          * Impersonate
          */
