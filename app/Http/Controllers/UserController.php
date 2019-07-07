@@ -37,23 +37,23 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $validate = $this->validate($request, [
+        $this->validate($request, [
             'name'     => ['required', 'min:3', 'max:255'],
             'email'    => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-      ]);
+        ]);
 
-        if ($validate) {
-            $user = User::create([
-                'name'     => $request->name,
-                'email'    => $request->email,
-                'password' => Hash::make($request->password),
-            ]);
+        $user = User::create([
+            'name'     => $request->name,
+            'email'    => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
 
-            alert()->success(__('New User Created.'));
+        $user->syncRoles(array_keys($request->roles));
 
-            return redirect()->route('users.index');
-        }
+        alert()->success(__('New User Created.'));
+
+        return redirect()->route('users.index');
     }
 
     /**
@@ -107,7 +107,9 @@ class UserController extends Controller
                 'password' => Hash::make($request->password),
             ]);
         }
-
+        
+        $user->syncRoles(array_keys($request->roles));
+        
         alert()->success(__('User details updated.'));
 
         return redirect()->route('users.edit', $user);

@@ -32,6 +32,19 @@
                         'value' => $user->email,
                         'type' => 'text'
                     ])
+
+                    <div class="form-group row">
+                        <label for="roles[]" class="col-md-4 col-form-label text-md-right">
+                            {{ __('Role(s)') }}
+                        </label>
+                        <div class="col-md-6">
+                            <ol style="list-style: none;" class="p-0 mt-2 mb-2">
+                                @foreach($user->getRoleNames() as $role)
+                                    <li>{{ $role }}</li>
+                                @endforeach
+                            </ol>
+                        </div>
+                    </div>
                     
                     @buttonlink([
                         'url' => route('users.index'),

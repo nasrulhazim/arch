@@ -55,6 +55,24 @@
                             'type' => 'password'
                         ])
 
+                        <div class="form-group row">
+                            <label for="roles[]" class="col-md-4 col-form-label text-md-right">
+                                {{ __('Role(s)') }}
+                            </label>
+                            <div class="col-md-6">
+                            @foreach(roles() as $role)
+                                <div class="form-check">
+                                  <input class="form-check-input roles" type="checkbox" 
+                                    {{ $user->hasRole($role->name) ? 'checked' : '' }}
+                                    name="roles[{{ $role->name }}]" id="role-{{ $role->name }}">
+                                  <label class="form-check-label" for="role-{{ $role->name }}">
+                                    {{ classNameToTitleCase($role->name) }}
+                                  </label>
+                                </div>
+                            @endforeach
+                            </div>
+                        </div>
+
                         @buttonlink([
                             'label' => 'Cancel',
                             'url' => route('users.show', $user),
