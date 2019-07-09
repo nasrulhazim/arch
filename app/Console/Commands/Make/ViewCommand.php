@@ -48,7 +48,7 @@ class ViewCommand extends Command
      */
     public function handle()
     {
-        $name     = Str::kebab($this->argument('name'));
+        $name     = Str::kebab(str_replace(['/', '\\'], '', $this->argument('name')));
         $basename = class_basename($name);
 
         $view_path = resource_path('views/' . $name);

@@ -7,8 +7,8 @@
 			var datatable_{{ $table_id }}_options = { 
 				language: {
   					paginate: {
-  						previous: "<",
-  						next: ">",
+  						previous: '<i class="fas fa-angle-left"></i>',
+  						next: '<i class="fas fa-angle-right"></i>',
   					}
   				},
 				processing: true, 
