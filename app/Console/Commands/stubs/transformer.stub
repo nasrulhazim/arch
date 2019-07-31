@@ -15,7 +15,16 @@ class DummyClass extends TransformerAbstract
     public function transform(DummyModelShort $model)
     {
         return [
-            'id'   => (int) $model->id,
+            'id' => $model->id, // good to have - UUID
+            'created_at' => $model->created_at->format('d-m-Y H:i:s'),
+            'action' => view(
+                'ViewName.partials.actions', [
+                    'view_url' => route('RoutePrefix.show', $model),
+                    'edit_url' => route('RoutePrefix.edit', $model),
+                    'delete_url' => route('api.RoutePrefix.destroy', $model),
+                    'permission' => 'PermissionName',
+                ]
+            )->__toString()
         ];
     }
 }

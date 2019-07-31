@@ -14,6 +14,14 @@ return [
 
     'name' => env('APP_NAME', 'Arch'),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Application Description
+    |--------------------------------------------------------------------------
+    |
+    | This value is the description of your application.
+    |
+    */
     'description' => env('APP_DESCRIPTION', 'Arch, pre-built admin panel.'),
 
     /*

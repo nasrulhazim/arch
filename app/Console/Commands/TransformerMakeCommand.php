@@ -72,14 +72,17 @@ class TransformerMakeCommand extends GeneratorCommand
         $modelFull  = $this->rootNamespace() . $modelFixed;
         $fqdn       = '\\' . $modelFull;
         $modelShort = (new \ReflectionClass($fqdn))->getShortName();
+        $viewName = Str::kebab($modelShort);
+        $routePrefix = Str::snake($modelShort);
+        $permissionName = Str::kebab($modelShort);
 
         if (! class_exists($fqdn)) {
             throw new \Exception("Model $modelFull does not exist");
         }
 
         return str_replace(
-            ['DummyModelFull', 'DummyModelShort'],
-            [$modelFull, $modelShort],
+            ['DummyModelFull', 'DummyModelShort', 'ViewName','RoutePrefix','PermissionName'],
+            [$modelFull, $modelShort, $viewName, $routePrefix, $permissionName],
             $stub
         );
     }
