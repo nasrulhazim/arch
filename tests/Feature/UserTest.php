@@ -39,7 +39,7 @@ class UserTest extends TestCase
             ->assertSee('Name')
             ->assertSee('E-Mail Address')
             ->assertSee('Password')
-            ->assertSee('Confirm Password')
+            ->assertSee('Password Confirmation')
             ->assertSee('Cancel')
             ->assertSee('Create User');
     }
@@ -57,6 +57,7 @@ class UserTest extends TestCase
                 'email'                 => 'new@user.com',
                 'password'              => 'password',
                 'password_confirmation' => 'password',
+                'roles'                 => ['User'],
             ])->assertRedirect('/users');
 
         $this->assertDatabaseHas('users', [
