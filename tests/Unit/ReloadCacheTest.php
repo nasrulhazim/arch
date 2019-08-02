@@ -23,6 +23,7 @@ class ReloadCacheTest extends TestCase
             ->expectsOutput('Route cache cleared!')
             ->expectsOutput('Routes cached successfully!')
             ->expectsOutput('Compiled views cleared!')
+            ->expectsOutput('Successfully reload caches.')
             ->assertExitCode(0);
     }
 }

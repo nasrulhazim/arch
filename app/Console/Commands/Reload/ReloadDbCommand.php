@@ -38,9 +38,11 @@ class ReloadDbCommand extends Command
     {
         $this->call('migrate:fresh', ['--seed' => true]);
         $this->call('profile:seed');
-
+        
         if ($this->option('dev')) {
             $this->call('seed:dev');
         }
+
+        $this->info('Successfully reload database.');
     }
 }

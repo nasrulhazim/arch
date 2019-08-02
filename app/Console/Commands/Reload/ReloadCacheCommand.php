@@ -40,5 +40,7 @@ class ReloadCacheCommand extends Command
         $this->call('responsecache:flush');
         $this->call('route:cache');
         $this->call('view:clear');
+
+        $this->info('Successfully reload caches.');
     }
 }
