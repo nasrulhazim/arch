@@ -33,6 +33,7 @@
         "spatie/laravel-responsecache": "^5.0",
         "tightenco/ziggy": "^0.6.9",
         "uxweb/sweet-alert": "^2.0",
+        "yadahan/laravel-authentication-log": "^1.1",
         "yajra/laravel-datatables": "^1.0",
         "yajra/laravel-datatables-oracle": "~9.0"
     },
