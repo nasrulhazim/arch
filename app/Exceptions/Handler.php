@@ -60,7 +60,7 @@ class Handler extends ExceptionHandler
         if ($exception instanceof ExpiredPasswordException) {
             return response()->view('errors.expired-password', [], 401);
         }
-        
+
         return parent::render($request, $exception);
     }
 }

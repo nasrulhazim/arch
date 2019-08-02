@@ -9,7 +9,8 @@ use OwenIt\Auditing\Contracts\Auditable;
 
 class Base extends Model implements Auditable, DatatableContract
 {
-    use \OwenIt\Auditing\Auditable, HasDatatable;
+    use \OwenIt\Auditing\Auditable;
+    use HasDatatable;
 
     protected $guarded = [
         'id',

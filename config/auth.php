@@ -128,7 +128,7 @@ return [
     | First Time Login
     |--------------------------------------------------------------------------
     |
-    | Enable or disable first time login checking. 
+    | Enable or disable first time login checking.
     | If it's a first time, do ask to update password.
     |
     */
@@ -139,7 +139,7 @@ return [
     | Enable Password Reset
     |--------------------------------------------------------------------------
     |
-    | Enable or disable password reset. 
+    | Enable or disable password reset.
     |
     */
     'enable_password_reset' => env('ENABLE_PASSWORD_RESET', true),
@@ -149,7 +149,7 @@ return [
     | Enable Account Registration
     |--------------------------------------------------------------------------
     |
-    | Enable or disable account registration. 
+    | Enable or disable account registration.
     |
     */
     'enable_account_registration' => env('ENABLE_ACCOUNT_REGISTRATION', true),
@@ -159,7 +159,7 @@ return [
     | Enable Account Verification
     |--------------------------------------------------------------------------
     |
-    | Enable or disable account verification. 
+    | Enable or disable account verification.
     |
     */
     'enable_account_verification' => env('ENABLE_ACCOUNT_VERIFICATION', false),

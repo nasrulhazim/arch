@@ -28,8 +28,8 @@ class DevelopmentSeeder extends Seeder
             $password = Hash::make('password');
 
             $user = \App\Models\User::updateOrCreate([
-                'name'              => $name,
-                'email'             => $email,
+                'name'  => $name,
+                'email' => $email,
             ], [
                 'password'          => $password,
                 'email_verified_at' => now(),

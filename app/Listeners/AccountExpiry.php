@@ -20,7 +20,7 @@ class AccountExpiry
      */
     public function handle(Attempting $event)
     {
-        if(! accountExpiryCheckingEnabled()) {
+        if (! accountExpiryCheckingEnabled()) {
             return;
         }
 

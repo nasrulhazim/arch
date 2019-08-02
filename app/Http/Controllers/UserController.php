@@ -42,7 +42,7 @@ class UserController extends Controller
             'email'    => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
-        
+
         $user = User::create([
             'name'     => $request->name,
             'email'    => $request->email,
@@ -107,9 +107,9 @@ class UserController extends Controller
                 'password' => Hash::make($request->password),
             ]);
         }
-        
+
         $user->syncRoles(array_keys($request->roles));
-        
+
         alert()->success(__('User details updated.'));
 
         return redirect()->route('users.edit', $user);

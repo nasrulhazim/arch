@@ -6,7 +6,9 @@ use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
 {
-    use CreatesApplication, Traits\ApiEndpoint, Traits\AssertTraits;
+    use CreatesApplication;
+    use Traits\ApiEndpoint;
+    use Traits\AssertTraits;
 
     protected function tearDown(): void
     {

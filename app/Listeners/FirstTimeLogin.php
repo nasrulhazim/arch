@@ -20,10 +20,10 @@ class FirstTimeLogin
      */
     public function handle(Attempting $event)
     {
-        if(! isFirstTimeLoginCheckingEnabled()) {
+        if (! isFirstTimeLoginCheckingEnabled()) {
             return;
         }
-        
+
         $user = \App\Models\User::where('email', $event->credentials['email'])->first();
 
         if ($user->firstTimeLogin()) {

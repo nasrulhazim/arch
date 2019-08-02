@@ -20,7 +20,7 @@ class PasswordExpiry
      */
     public function handle(Attempting $event)
     {
-        if(! passwordExpiryCheckingEnabled()) {
+        if (! passwordExpiryCheckingEnabled()) {
             return;
         }
 

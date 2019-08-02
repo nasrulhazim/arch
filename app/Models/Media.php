@@ -9,5 +9,6 @@ use OwenIt\Auditing\Contracts\Auditable as AuditableContract;
 
 class Media extends \Spatie\MediaLibrary\Models\Media implements DatatableContract, AuditableContract
 {
-    use AuditableTrait, DatatableTrait;
+    use AuditableTrait;
+    use DatatableTrait;
 }

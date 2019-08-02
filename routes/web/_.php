@@ -14,8 +14,8 @@
 Route::get('/', 'WelcomeController')->name('landing-page');
 
 Auth::routes([
-    'reset' => config('auth.enable_password_reset'),
-    'verify' => config('auth.enable_account_verification'),
+    'reset'    => config('auth.enable_password_reset'),
+    'verify'   => config('auth.enable_account_verification'),
     'register' => config('auth.enable_account_registration'),
 ]);
 

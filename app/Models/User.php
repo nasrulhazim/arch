@@ -16,9 +16,15 @@ use Yadahan\AuthenticationLog\AuthenticationLogable;
 
 class User extends Authenticatable implements Auditable, MustVerifyEmail, DatatableContract
 {
-    use HasDatatable, HasApiTokens, HasRoles,
-    Notifiable, \OwenIt\Auditing\Auditable,
-    Impersonate, AuthenticationLogable;
+    use HasDatatable;
+    use HasApiTokens;
+    use HasRoles;
+    use
+    Notifiable;
+    use \OwenIt\Auditing\Auditable;
+    use
+    Impersonate;
+    use AuthenticationLogable;
 
     /**
      * The attributes that show in datatable.
@@ -74,7 +80,7 @@ class User extends Authenticatable implements Auditable, MustVerifyEmail, Datata
 
     /**
      * Determine either user is first time log into the application.
-     * 
+     *
      * @return bool
      */
     public function firstTimeLogin(): bool

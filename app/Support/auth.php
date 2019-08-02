@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * Check if account expiry feature is enabled / disabled.
@@ -10,7 +10,7 @@ if (! function_exists('accountExpiryCheckingEnabled')) {
     }
 }
 
-/**
+/*
  * Check if password expiry feature is enabled / disabled.
  */
 if (! function_exists('passwordExpiryCheckingEnabled')) {
@@ -20,7 +20,7 @@ if (! function_exists('passwordExpiryCheckingEnabled')) {
     }
 }
 
-/**
+/*
  * Check if user is first time login
  */
 if (! function_exists('isFirstTimeLoginCheckingEnabled')) {

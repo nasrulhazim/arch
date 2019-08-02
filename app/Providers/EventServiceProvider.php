@@ -3,14 +3,11 @@
 namespace App\Providers;
 
 use App\Listeners\AccountExpiry;
-use App\Listeners\EagerLoadLoggedInUser;
 use App\Listeners\FirstTimeLogin;
 use App\Listeners\IsPasswordResetByAdmin;
 use App\Listeners\PasswordExpiry;
 use App\Listeners\PasswordResetByAdmin;
 use Illuminate\Auth\Events\Attempting;
-use Illuminate\Auth\Events\Login;
-use Illuminate\Auth\Events\Logout;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;

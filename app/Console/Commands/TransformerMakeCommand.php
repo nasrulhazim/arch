@@ -3,8 +3,8 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\GeneratorCommand;
-use Symfony\Component\Console\Input\InputArgument;
 use Illuminate\Support\Str;
+use Symfony\Component\Console\Input\InputArgument;
 
 class TransformerMakeCommand extends GeneratorCommand
 {
@@ -69,12 +69,12 @@ class TransformerMakeCommand extends GeneratorCommand
 
     protected function replaceModel($stub)
     {
-        $modelFixed = str_replace('/', '\\', $this->argument('model'));
-        $modelFull  = $this->rootNamespace() . $modelFixed;
-        $fqdn       = '\\' . $modelFull;
-        $modelShort = (new \ReflectionClass($fqdn))->getShortName();
-        $viewName = Str::kebab($modelShort);
-        $routePrefix = Str::snake($modelShort);
+        $modelFixed     = str_replace('/', '\\', $this->argument('model'));
+        $modelFull      = $this->rootNamespace() . $modelFixed;
+        $fqdn           = '\\' . $modelFull;
+        $modelShort     = (new \ReflectionClass($fqdn))->getShortName();
+        $viewName       = Str::kebab($modelShort);
+        $routePrefix    = Str::snake($modelShort);
         $permissionName = Str::kebab($modelShort);
 
         if (! class_exists($fqdn)) {
@@ -82,7 +82,7 @@ class TransformerMakeCommand extends GeneratorCommand
         }
 
         return str_replace(
-            ['DummyModelFull', 'DummyModelShort', 'ViewName','RoutePrefix','PermissionName'],
+            ['DummyModelFull', 'DummyModelShort', 'ViewName', 'RoutePrefix', 'PermissionName'],
             [$modelFull, $modelShort, $viewName, $routePrefix, $permissionName],
             $stub
         );
