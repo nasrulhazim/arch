@@ -1,4 +1,4 @@
-[![Build Status](https://dev.azure.com/nasrulhazim/arch/_apis/build/status/nasrulhazim.arch?branchName=master)](https://dev.azure.com/nasrulhazim/arch/_build/latest?definitionId=4&branchName=master)
+[![CircleCI](https://circleci.com/gh/nasrulhazim/arch.svg?style=svg)](https://circleci.com/gh/nasrulhazim/arch)
 
 ## Arch 
 
