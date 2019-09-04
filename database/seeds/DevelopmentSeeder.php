@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Str;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -23,7 +24,7 @@ class DevelopmentSeeder extends Seeder
         $roles = collect(config('acl.roles'));
 
         $roles->each(function ($role) {
-            $name = title_case($role);
+            $name = Str::title($role);
             $email = $role . '@app.com';
             $password = Hash::make('password');
 
