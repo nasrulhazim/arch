@@ -9,12 +9,12 @@ class UserDatatable extends Datatable
      *
      * @var string
      */
-    protected $model = '\App\Models\User';
+    protected $model = \App\Models\User::class;
 
     /**
      * \App\Transformers\Datatable\UserTransformer.
      *
      * @var string
      */
-    protected $transformer = '\App\Transformers\Datatable\UserTransformer';
+    protected $transformer = \App\Transformers\Datatable\UserTransformer::class;
 }

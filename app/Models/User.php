@@ -4,7 +4,8 @@ namespace App\Models;
 
 use App\Contracts\Datatable as DatatableContract;
 use App\Traits\HasDatatable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail  as MustVerifyEmailContract;
+use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -14,7 +15,7 @@ use OwenIt\Auditing\Contracts\Auditable;
 use Spatie\Permission\Traits\HasRoles;
 use Yadahan\AuthenticationLog\AuthenticationLogable;
 
-class User extends Authenticatable implements Auditable, MustVerifyEmail, DatatableContract
+class User extends Authenticatable implements Auditable, MustVerifyEmailContract, DatatableContract
 {
     use HasDatatable;
     use HasApiTokens;
@@ -25,6 +26,7 @@ class User extends Authenticatable implements Auditable, MustVerifyEmail, Datata
     use
     Impersonate;
     use AuthenticationLogable;
+    use MustVerifyEmailTrait;
 
     /**
      * The attributes that show in datatable.
