@@ -37,7 +37,7 @@ class ReloadCacheCommand extends Command
     {
         $this->call('cache:clear');
         $this->call('config:cache');
-        $this->call('responsecache:flush');
+        $this->call('responsecache:clear');
         $this->call('route:cache');
         $this->call('view:clear');
 
