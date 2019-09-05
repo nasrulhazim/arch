@@ -107,9 +107,9 @@ class UserController extends Controller
                 'password' => Hash::make($request->password),
             ]);
         }
-        
+
         $user->syncRoles(array_keys($request->roles));
-        
+
         alert()->success(__('User details updated.'));
 
         return redirect()->route('users.edit', $user);

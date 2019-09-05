@@ -19,10 +19,7 @@ class ReloadDbTest extends TestCase
             ->expectsOutput('Dropped all tables successfully.')
             ->expectsOutput('Migration table created successfully.')
             ->expectsOutput('Seeding DatabaseSeeder...')
-            ->expectsOutput('Database seeding completed successfully.')
-            ->expectsOutput('Database seeding completed successfully.')
-            ->expectsOutput('Database seeding completed successfully.')
-            ->expectsOutput('Database seeding completed successfully.')
+            ->expectsOutput('Successfully reload database.')
             ->assertExitCode(0);
     }
 }

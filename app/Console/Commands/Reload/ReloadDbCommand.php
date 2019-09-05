@@ -42,5 +42,7 @@ class ReloadDbCommand extends Command
         if ($this->option('dev')) {
             $this->call('seed:dev');
         }
+
+        $this->info('Successfully reload database.');
     }
 }

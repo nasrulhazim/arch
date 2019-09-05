@@ -45,6 +45,22 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if ($exception instanceof FirstTimeLoginException) {
+            return redirect()->route('password.request')->with('message', __('You are first time login. Enter your e-mail address to get set password link.'));
+        }
+
+        if ($exception instanceof IsPasswordResetByAdmin) {
+            return redirect()->route('password.request')->with('message', __('Your password has been reset by admin.'));
+        }
+
+        if ($exception instanceof ExpiredAccountException) {
+            return response()->view('errors.expired-account', [], 401);
+        }
+
+        if ($exception instanceof ExpiredPasswordException) {
+            return response()->view('errors.expired-password', [], 401);
+        }
+
         return parent::render($request, $exception);
     }
 }

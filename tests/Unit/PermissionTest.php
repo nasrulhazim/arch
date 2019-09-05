@@ -3,6 +3,7 @@
 namespace Tests\Unit;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Str;
 use Tests\TestCase;
 
 class PermissionTest extends TestCase
@@ -37,7 +38,7 @@ class PermissionTest extends TestCase
 
         $permissions->each(function ($permission) use ($actions) {
             $actions->each(function ($action) use ($permission) {
-                config('permission.models.permission')::updateOrCreate(['name' => kebab_case($action . ' ' . $permission)]);
+                config('permission.models.permission')::updateOrCreate(['name' => Str::kebab($action . ' ' . $permission)]);
             });
         });
 
@@ -51,7 +52,7 @@ class PermissionTest extends TestCase
         ];
         foreach ($data as $datum) {
             $actions->each(function ($action) use ($datum) {
-                $this->assertDatabaseHas('permissions', ['name' => kebab_case($action . ' ' . $datum)]);
+                $this->assertDatabaseHas('permissions', ['name' => Str::kebab($action . ' ' . $datum)]);
             });
         }
     }

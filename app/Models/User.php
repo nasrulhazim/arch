@@ -4,7 +4,8 @@ namespace App\Models;
 
 use App\Contracts\Datatable as DatatableContract;
 use App\Traits\HasDatatable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail  as MustVerifyEmailContract;
+use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -12,12 +13,20 @@ use Lab404\Impersonate\Models\Impersonate;
 use Laravel\Passport\HasApiTokens;
 use OwenIt\Auditing\Contracts\Auditable;
 use Spatie\Permission\Traits\HasRoles;
+use Yadahan\AuthenticationLog\AuthenticationLogable;
 
-class User extends Authenticatable implements Auditable, MustVerifyEmail, DatatableContract
+class User extends Authenticatable implements Auditable, MustVerifyEmailContract, DatatableContract
 {
-    use HasDatatable, HasApiTokens, HasRoles,
-    Notifiable, \OwenIt\Auditing\Auditable,
+    use HasDatatable;
+    use HasApiTokens;
+    use HasRoles;
+    use
+    Notifiable;
+    use \OwenIt\Auditing\Auditable;
+    use
     Impersonate;
+    use AuthenticationLogable;
+    use MustVerifyEmailTrait;
 
     /**
      * The attributes that show in datatable.
@@ -52,7 +61,11 @@ class User extends Authenticatable implements Auditable, MustVerifyEmail, Datata
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'email_verified_at'          => 'datetime',
+        'password_expired_at'        => 'datetime',
+        'account_expired_at'         => 'datetime',
+        'is_first_time_login'        => 'boolean',
+        'is_password_reset_by_admin' => 'boolean',
     ];
 
     /**
@@ -65,5 +78,15 @@ class User extends Authenticatable implements Auditable, MustVerifyEmail, Datata
     public function scopeDatatable(Builder $query): Builder
     {
         return $query->select('users.*');
+    }
+
+    /**
+     * Determine either user is first time log into the application.
+     *
+     * @return bool
+     */
+    public function firstTimeLogin(): bool
+    {
+        return 0 === $this->authentications()->count() ? true : false;
     }
 }

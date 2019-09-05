@@ -2,4 +2,4 @@
 /**
  * NAME.
  */
-Route::resource('URI', 'CONTROLLER')->name('ROUTE_NAME');
+Route::resource('URI', 'CONTROLLER');

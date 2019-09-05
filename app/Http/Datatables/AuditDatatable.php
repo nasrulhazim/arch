@@ -9,12 +9,12 @@ class AuditDatatable extends Datatable
      *
      * @var string
      */
-    protected $model = '\App\Models\Audit';
+    protected $model = \App\Models\Audit::class;
 
     /**
      * \App\Transformers\Datatable\AuditTransformer.
      *
      * @var string
      */
-    protected $transformer = '\App\Transformers\Datatable\AuditTransformer';
+    protected $transformer = \App\Transformers\Datatable\AuditTransformer::class;
 }

@@ -70,6 +70,10 @@ return [
             'model'  => App\Models\User::class,
         ],
 
+        'ldap' => [
+              'driver' => 'ldap', // Was 'eloquent'.
+              'model'  => App\Models\User::class,
+        ],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -98,4 +102,65 @@ return [
             'expire'   => 60,
         ],
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Acount Expiry
+    |--------------------------------------------------------------------------
+    |
+    | Enable or disable account expiry checking.
+    |
+    */
+    'enable_account_expiry' => env('ENABLE_ACCOUNT_EXPIRY', false),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Password Expiry
+    |--------------------------------------------------------------------------
+    |
+    | Enable or disable account password checking.
+    |
+    */
+    'enable_password_expiry' => env('ENABLE_PASSWORD_EXPIRY', false),
+
+    /*
+    |--------------------------------------------------------------------------
+    | First Time Login
+    |--------------------------------------------------------------------------
+    |
+    | Enable or disable first time login checking.
+    | If it's a first time, do ask to update password.
+    |
+    */
+    'enable_first_time_login' => env('ENABLE_FIRST_TIME_LOGIN', false),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Enable Password Reset
+    |--------------------------------------------------------------------------
+    |
+    | Enable or disable password reset.
+    |
+    */
+    'enable_password_reset' => env('ENABLE_PASSWORD_RESET', true),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Enable Account Registration
+    |--------------------------------------------------------------------------
+    |
+    | Enable or disable account registration.
+    |
+    */
+    'enable_account_registration' => env('ENABLE_ACCOUNT_REGISTRATION', true),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Enable Account Verification
+    |--------------------------------------------------------------------------
+    |
+    | Enable or disable account verification.
+    |
+    */
+    'enable_account_verification' => env('ENABLE_ACCOUNT_VERIFICATION', false),
 ];
