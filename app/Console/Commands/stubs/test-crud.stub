@@ -52,7 +52,7 @@ class DummyClass extends TestCase
             ->actingAs($this->user)
             ->get(route('ROUTE_NAME.create'))
             ->assertStatus(200)
-            ->assertSee('New ' . 'TITLE');
+            ->assertSee('New TITLE');
     }
 
     /** @test */
