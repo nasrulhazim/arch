@@ -76,11 +76,11 @@ class CrudTestCommand extends TestMakeCommand
         $find = [
             'ROUTE_NAME', 'MODEL_NAME', 'TITLE',
         ];
-        
+
         $model_basename = class_basename($this->argument('model'));
-        $route_name = Str::slug($model_basename, '.');
-        $title = ucfirst($route_name);
-        $model = str_replace('/', '\\', $this->argument('model'));
+        $route_name     = Str::slug($model_basename, '.');
+        $title          = ucfirst($route_name);
+        $model          = str_replace('/', '\\', $this->argument('model'));
 
         $replace = [
             $route_name,

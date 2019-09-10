@@ -126,8 +126,9 @@ class MakePageCommand extends Command
 
     private function createTest()
     {
-        $this->call('make:test', [
-            'name' => $this->getInputName() . 'Test',
+        $this->call('make:test-crud', [
+            'name'  => $this->getInputName() . 'Test',
+            'model' => '\\App\\Models\\' . $this->getInputName(),
         ]);
     }
 }
