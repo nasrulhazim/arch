@@ -15,8 +15,8 @@ class DummyClass extends TestCase
     {
         parent::setUp();
 
-        config('permission.models.role')::updateOrCreate([
-            'name' => 'superadmin'
+        $this->artisan('db:seed', [
+            '--class' => 'RolesAndPermissionsSeeder',
         ]);
 
         $this->user = factory(\App\Models\User::class)->create([
