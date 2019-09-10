@@ -35,9 +35,9 @@ class RoleTest extends TestCase
         });
 
         $data = [
-            'Superadmin',
-            'Admin',
-            'User',
+            'superadmin',
+            'admin',
+            'user',
         ];
         foreach ($data as $datum) {
             $this->assertDatabaseHas('roles', ['name' => $datum]);

@@ -68,6 +68,6 @@ class UserTest extends TestCase
 
     private function getSuperadmin()
     {
-        return \App\Models\User::where('email', 'Superadmin@app.com')->first();
+        return \App\Models\User::where('email', 'superadmin@app.com')->first();
     }
 }
