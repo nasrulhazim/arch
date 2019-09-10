@@ -19,7 +19,7 @@ class DummyClass extends TestCase
             'name' => 'superadmin'
         ]);
 
-        $this->user = factory(MODEL_NAME::class)->create([
+        $this->user = factory(\App\MODEL_NAME::class)->create([
             'email' => 'superadmin@app.com',
         ])->assignRole('superadmin');
     }
@@ -37,7 +37,7 @@ class DummyClass extends TestCase
     /** @test */
     public function it_can_view_a_record()
     {
-        $ROUTE_NAME = factory(MODEL_NAME::class)->create();
+        $ROUTE_NAME = factory(\App\MODEL_NAME::class)->create();
         $this
             ->actingAs($this->user)
             ->get(route('ROUTE_NAME.show', $ROUTE_NAME))
@@ -58,7 +58,7 @@ class DummyClass extends TestCase
     /** @test */
     public function it_can_view_edit_form()
     {
-        $ROUTE_NAME = factory(MODEL_NAME::class)->create();
+        $ROUTE_NAME = factory(\App\MODEL_NAME::class)->create();
         $this
             ->actingAs($this->user)
             ->get(route('ROUTE_NAME.edit', $ROUTE_NAME))
@@ -87,7 +87,7 @@ class DummyClass extends TestCase
     /** @test */
     public function it_can_update_existing_record()
     {
-        $ROUTE_NAME = factory(MODEL_NAME::class)->create();
+        $ROUTE_NAME = factory(\App\MODEL_NAME::class)->create();
 
         $this->assertDatabaseHas(Str::plural('ROUTE_NAME'), [
             'name' => $ROUTE_NAME->name,
@@ -112,7 +112,7 @@ class DummyClass extends TestCase
     /** @test */
     public function it_can_delete_existing_record()
     {
-        $ROUTE_NAME = factory(MODEL_NAME::class)->create();
+        $ROUTE_NAME = factory(\App\MODEL_NAME::class)->create();
         $this
             ->actingAs($this->user, 'api')
             ->json('DELETE', route('api.ROUTE_NAME.destroy', $ROUTE_NAME))

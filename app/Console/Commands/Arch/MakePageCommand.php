@@ -128,7 +128,7 @@ class MakePageCommand extends Command
     {
         $this->call('make:test-crud', [
             'name'  => $this->getInputName() . 'Test',
-            'model' => '\\App\\Models\\' . $this->getInputName(),
+            'model' => 'Models\\' . $this->getInputName(),
         ]);
     }
 }
