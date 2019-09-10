@@ -14,7 +14,7 @@
 
 					@buttonlink([
 	                    'label' => 'Cancel',
-	                    'url' => route('ROUTE_NAME.show', $model),
+	                    'url' => route('ROUTE_NAME.show', $ROUTE_NAME),
 	                ])
 
 	                @buttonsubmit([

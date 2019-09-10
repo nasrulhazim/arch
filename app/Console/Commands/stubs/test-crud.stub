@@ -19,7 +19,7 @@ class DummyClass extends TestCase
             'name' => 'superadmin'
         ]);
 
-        $this->user = factory(\App\MODEL_NAME::class)->create([
+        $this->user = factory(\App\Models\User::class)->create([
             'email' => 'superadmin@app.com',
         ])->assignRole('superadmin');
     }
@@ -42,7 +42,7 @@ class DummyClass extends TestCase
             ->actingAs($this->user)
             ->get(route('ROUTE_NAME.show', $ROUTE_NAME))
             ->assertStatus(200)
-            ->assertSee('Edit TITLE');
+            ->assertSee('TITLE Details');
     }
 
     /** @test */
@@ -77,7 +77,7 @@ class DummyClass extends TestCase
             ->assertStatus(302)
             ->assertRedirect('/ROUTE_NAME/1')
             ->assertSessionHas('sweet_alert.text', __('You have successfully create a ROUTE_NAME.'))
-            ->assertSessionHas('sweet_alert.title', __('TITLE');
+            ->assertSessionHas('sweet_alert.title', __('TITLE'));
 
         $this->assertDatabaseHas(Str::plural('ROUTE_NAME'), [
             'id' => 1
