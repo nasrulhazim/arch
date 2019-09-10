@@ -3,6 +3,14 @@
 @section('content')
 	@include('components.datatable.asset')
 	<div class="container">
+		<div class="row pb-3">
+			<div class="col">
+				@buttonnew([
+					'url' => route('ROUTE_NAME.create'),
+					'classes' => 'btn btn-success float-right'
+				])
+			</div>
+		</div>
 		@card
 			@cardheader([
 				'title' => __('TITLE'),

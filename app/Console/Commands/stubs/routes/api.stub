@@ -4,4 +4,4 @@
  *
  * You may want to move this route to 'auth:api' middleware if it's protected.
  */
-Route::get('URI', 'CONTROLLER@destroy')->name('ROUTE_NAME.destroy');
+Route::delete('URI/{ROUTE_NAME}', 'CONTROLLER@destroy')->name('ROUTE_NAME.destroy');

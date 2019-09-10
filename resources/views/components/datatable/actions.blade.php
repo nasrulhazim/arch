@@ -11,7 +11,7 @@
 	@endif
 	@if(auth()->guard('api')->user()->can('destroy-' . $permission))
 	<a href="#" class="btn btn-sm btn-outline-danger" title="{{ __('Delete') }}"
-       onclick="dtConfirmDelete('{{ $delete_url }}', {{ $id }})">
+       onclick="dtConfirmDelete('{{ $delete_url }}')">
         <i class="far fa-trash-alt"></i>
     </a>
     @endif

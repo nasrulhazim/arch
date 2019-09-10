@@ -9,16 +9,20 @@
 				'breadcrumb' => true
 			])
 			@cardbody 
-				@buttonlink([
-                    'label' => 'Cancel',
-                    'url' => route('ROUTE_NAME.show', $model),
-                ])
+				<form method="POST" action="{{ route('ROUTE_NAME.store') }}">
+                    @csrf
 
-                @buttonsubmit([
-                    'icon' => 'fas fa-save mr-2',
-                    'label' => 'Update',
-                    'classes' => 'btn btn-success float-right'
-                ])
+					@buttonlink([
+	                    'label' => 'Cancel',
+	                    'url' => route('ROUTE_NAME.index'),
+	                ])
+
+	                @buttonsubmit([
+	                    'icon' => 'fas fa-save mr-2',
+	                    'label' => 'Update',
+	                    'classes' => 'btn btn-success float-right'
+	                ])
+	            </form>
 			@endcardbody
 		@endcard
 	</div>

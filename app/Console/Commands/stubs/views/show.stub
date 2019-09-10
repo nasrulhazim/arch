@@ -14,7 +14,7 @@
                 ])
 
                 @buttonedit([
-                    'url' => route('ROUTE_NAME.edit', $user),
+                    'url' => route('ROUTE_NAME.edit', $ROUTE_NAME),
                     'classes' => 'btn btn-primary float-right'
                 ])
 			@endcardbody
