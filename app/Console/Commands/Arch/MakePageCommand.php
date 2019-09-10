@@ -37,7 +37,7 @@ class MakePageCommand extends Command
     {
         // Generate a migration, factory, and resource controller for the model
         $this->createModel();
-        
+
         // Generate store and update request
         $this->createRequest();
         $this->comment('You need to configure the ' . $this->getInputName() . ' store and update request.');
@@ -67,18 +67,18 @@ class MakePageCommand extends Command
     {
         $this->call('make:model', [
             'name'  => 'Models\\' . $this->getInputName(),
-            '--all' => true, 
+            '--all' => true,
         ]);
     }
 
     private function createRequest()
     {
         $this->call('make:request', [
-            'name'    => $this->getInputName() . '\\StoreRequest',
+            'name' => $this->getInputName() . '\\StoreRequest',
         ]);
 
         $this->call('make:request', [
-            'name'    => $this->getInputName() . '\\UpdateRequest',
+            'name' => $this->getInputName() . '\\UpdateRequest',
         ]);
     }
 
