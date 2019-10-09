@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'WelcomeController')->name('landing-page');
+Route::get('/', 'LandingPageController')->name('landing-page');
 
 Auth::routes([
     'reset'    => config('auth.enable_password_reset'),
