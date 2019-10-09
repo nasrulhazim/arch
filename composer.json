@@ -1,10 +1,12 @@
 {
-    "name": "laravel/laravel",
+    "name": "nasrulhazim/arch",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Arch is a pre-build admin panel for web application.",
     "keywords": [
         "framework",
-        "laravel"
+        "laravel",
+        "arch",
+        "argon"
     ],
     "license": "MIT",
     "require": {
@@ -90,12 +92,5 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ]
-    },
-    "repositories": [{
-        "type": "vcs",
-        "url": "https://github.com/backstageel/sweet-alert"
-    },{
-        "type": "vcs",
-        "url": "https://github.com/nasrulhazim/laravel-auditing"
-    }]
+    }
 }
