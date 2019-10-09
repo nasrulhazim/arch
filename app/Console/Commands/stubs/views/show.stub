@@ -5,7 +5,7 @@
 		@card
 			@cardheader([
 				'title' => __('TITLE Details'),
-				'icon' => 'fas fa-seach mr-2',
+				'icon' => 'fas fa-search mr-2',
 				'breadcrumb' => true
 			])
 			@cardbody 
