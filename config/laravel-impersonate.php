@@ -1,6 +1,11 @@
 <?php
 
 return [
+    /**
+     * Allow enable or disable impersonate from env
+     */
+    'enabled' => env('ENABLE_IMPERSONATE', false),
+
     /*
      * The session key used to store the original user id.
      */
