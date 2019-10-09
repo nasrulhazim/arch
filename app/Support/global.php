@@ -6,6 +6,10 @@
 if (! function_exists('isImpersonateEnabled')) {
     function isImpersonateEnabled(): bool
     {
+        if(isProduction()) {
+            return false;
+        }
+
         return config('laravel-impersonate.enabled') ?? false;
     }
 }
