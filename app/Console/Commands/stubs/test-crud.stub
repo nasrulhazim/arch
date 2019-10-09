@@ -1,0 +1,124 @@
+<?php
+
+namespace DummyNamespace;
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Str;
+use Tests\TestCase;
+
+class DummyClass extends TestCase
+{
+    use RefreshDatabase;
+
+    private $user;
+
+    public function setUp(): void
+    {
+        parent::setUp();
+
+        $this->artisan('db:seed', [
+            '--class' => 'RolesAndPermissionsSeeder',
+        ]);
+
+        $this->user = factory(\App\Models\User::class)->create([
+            'email' => 'superadmin@app.com',
+        ])->assignRole('superadmin');
+    }
+
+    /** @test */
+    public function it_can_view_list()
+    {
+        $this
+            ->actingAs($this->user)
+            ->get(route('ROUTE_NAME.index'))
+            ->assertStatus(200)
+            ->assertSee('TITLE');
+    }
+
+    /** @test */
+    public function it_can_view_a_record()
+    {
+        $ROUTE_NAME = factory(\App\MODEL_NAME::class)->create();
+        $this
+            ->actingAs($this->user)
+            ->get(route('ROUTE_NAME.show', $ROUTE_NAME))
+            ->assertStatus(200)
+            ->assertSee('TITLE Details');
+    }
+
+    /** @test */
+    public function it_can_view_create_form()
+    {
+        $this
+            ->actingAs($this->user)
+            ->get(route('ROUTE_NAME.create'))
+            ->assertStatus(200)
+            ->assertSee('New TITLE');
+    }
+
+    /** @test */
+    public function it_can_view_edit_form()
+    {
+        $ROUTE_NAME = factory(\App\MODEL_NAME::class)->create();
+        $this
+            ->actingAs($this->user)
+            ->get(route('ROUTE_NAME.edit', $ROUTE_NAME))
+            ->assertStatus(200)
+            ->assertSee('Edit TITLE');
+    }
+
+    /** @test */
+    public function it_can_store_new_record()
+    {
+        $this
+            ->actingAs($this->user)
+            ->post(route('ROUTE_NAME.store'), [
+                
+            ])
+            ->assertStatus(302)
+            ->assertRedirect('/ROUTE_NAME/1')
+            ->assertSessionHas('sweet_alert.text', __('You have successfully create a ROUTE_NAME.'))
+            ->assertSessionHas('sweet_alert.title', __('TITLE'));
+
+        $this->assertDatabaseHas(Str::plural('ROUTE_NAME'), [
+            'id' => 1
+        ]);
+    }
+
+    /** @test */
+    public function it_can_update_existing_record()
+    {
+        $ROUTE_NAME = factory(\App\MODEL_NAME::class)->create();
+
+        $this->assertDatabaseHas(Str::plural('ROUTE_NAME'), [
+            'name' => $ROUTE_NAME->name,
+            'url'  => $ROUTE_NAME->url,
+        ]);
+
+        $this
+            ->actingAs($this->user)
+            ->put(route('ROUTE_NAME.update', $ROUTE_NAME), [
+
+            ])
+            ->assertStatus(302)
+            ->assertRedirect('/ROUTE_NAME/1/edit')
+            ->assertSessionHas('sweet_alert.text', __('You have successfully update the ROUTE_NAME.'))
+            ->assertSessionHas('sweet_alert.title', __('TITLE'));
+
+        $this->assertDatabaseHas(Str::plural('ROUTE_NAME'), [
+            'id' => 1
+        ]);
+    }
+
+    /** @test */
+    public function it_can_delete_existing_record()
+    {
+        $ROUTE_NAME = factory(\App\MODEL_NAME::class)->create();
+        $this
+            ->actingAs($this->user, 'api')
+            ->json('DELETE', route('api.ROUTE_NAME.destroy', $ROUTE_NAME))
+            ->assertJson([
+                'message' => __('You have successfully delete the ROUTE_NAME.'),
+            ]);
+    }
+}

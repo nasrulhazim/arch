@@ -9,29 +9,16 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @include('layouts.partials.asset-font-awesome')
+    @include('layouts.partials.argon')
     @stack('styles')
 </head>
 <body>
-    <div id="app">
-        @yield('navigation')
-
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
-
-    <div class="row">
-        <div class="col text-center">
-            <p class="text-muted">Copyright &copy; {{ date('Y') }} {{ config('app.name') }}</p>
-        </div>
-    </div>
+    @yield('content')
+    
+    @yield('footer')
     
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

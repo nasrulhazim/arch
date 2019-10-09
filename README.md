@@ -1,8 +1,8 @@
-[![CircleCI](https://circleci.com/gh/nasrulhazim/arch.svg?style=svg)](https://circleci.com/gh/nasrulhazim/arch)
-
 ## Arch 
 
-Arch is a pre-build admin panel for web application.
+<center><img src="screenshot.png"></center>
+
+[![CircleCI](https://circleci.com/gh/nasrulhazim/arch.svg?style=svg)](https://circleci.com/gh/nasrulhazim/arch)
 
 ## Table of Content
 
@@ -17,6 +17,7 @@ Arch is a pre-build admin panel for web application.
 Laravel    | Arch
 :----------|:----------
  5.8.x     | 1.1.x
+ 6.x       | 2.x 
 
 ## Quick Installation
 

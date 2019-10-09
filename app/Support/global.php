@@ -1,6 +1,20 @@
 <?php
 
 /*
+ * Check Is Impersonate Enabled
+ */
+if (! function_exists('isImpersonateEnabled')) {
+    function isImpersonateEnabled(): bool
+    {
+        if (isProduction()) {
+            return false;
+        }
+
+        return config('laravel-impersonate.enabled') ?? false;
+    }
+}
+
+/*
  * Check Is Mail Enabled
  */
 if (! function_exists('isMailEnabled')) {

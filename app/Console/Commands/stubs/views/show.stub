@@ -5,7 +5,7 @@
 		@card
 			@cardheader([
 				'title' => __('TITLE Details'),
-				'icon' => 'fas fa-seach mr-2',
+				'icon' => 'fas fa-search mr-2',
 				'breadcrumb' => true
 			])
 			@cardbody 
@@ -14,7 +14,7 @@
                 ])
 
                 @buttonedit([
-                    'url' => route('ROUTE_NAME.edit', $user),
+                    'url' => route('ROUTE_NAME.edit', $ROUTE_NAME),
                     'classes' => 'btn btn-primary float-right'
                 ])
 			@endcardbody

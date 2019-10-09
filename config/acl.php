@@ -2,9 +2,9 @@
 
 return [
     'roles' => [
-        'Superadmin',
-        'Admin',
-        'User',
+        'superadmin',
+        'admin',
+        'user',
     ],
     'permissions' => [
         'administration',
@@ -21,29 +21,29 @@ return [
     ],
     'matrices' => [
         'administration' => [
-            'Superadmin' => ['see-all', 'see-one'],
+            'superadmin' => ['see-all', 'see-one'],
         ],
         'log' => [
-            'Superadmin' => ['see-all', 'see-one'],
+            'superadmin' => ['see-all', 'see-one'],
         ],
         'user' => [
-            'Superadmin' => ['see-all', 'see-one', 'create', 'edit', 'update', 'destroy'],
+            'superadmin' => ['see-all', 'see-one', 'create', 'edit', 'update', 'destroy'],
         ],
         'role' => [
-            'Superadmin' => ['see-all', 'see-one', 'create', 'edit', 'update', 'destroy'],
+            'superadmin' => ['see-all', 'see-one', 'create', 'edit', 'update', 'destroy'],
         ],
         'permission' => [
-            'Superadmin' => ['see-all', 'see-one', 'create', 'edit', 'update', 'destroy'],
+            'superadmin' => ['see-all', 'see-one', 'create', 'edit', 'update', 'destroy'],
         ],
         'setting' => [
-            'Superadmin' => ['see-all', 'see-one', 'create', 'edit', 'update', 'destroy'],
+            'superadmin' => ['see-all', 'see-one', 'create', 'edit', 'update', 'destroy'],
         ],
         'profile' => [
-            'Superadmin' => ['see-all', 'see-one', 'edit', 'update'],
-            'User'       => ['see-all', 'see-one', 'edit', 'update'],
+            'superadmin' => ['see-all', 'see-one', 'edit', 'update'],
+            'user'       => ['see-all', 'see-one', 'edit', 'update'],
         ],
         'audit' => [
-            'Superadmin' => ['see-all', 'see-one'],
+            'superadmin' => ['see-all', 'see-one'],
         ],
     ],
 ];

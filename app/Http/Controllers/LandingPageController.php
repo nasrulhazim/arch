@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class WelcomeController extends Controller
+class LandingPageController extends Controller
 {
     /**
      * Handle the incoming request.
@@ -15,6 +15,6 @@ class WelcomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('welcome');
+        return view('landing-page.index');
     }
 }

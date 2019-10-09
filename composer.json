@@ -1,20 +1,22 @@
 {
-    "name": "laravel/laravel",
+    "name": "nasrulhazim/arch",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Arch is a pre-build admin panel for web application.",
     "keywords": [
         "framework",
-        "laravel"
+        "laravel",
+        "arch",
+        "argon"
     ],
     "license": "MIT",
     "require": {
         "php": "^7.2",
         "appstract/laravel-blade-directives": "^1.4",
-        "cleaniquecoders/blade-plus-plus": "^1.0",
-        "cleaniquecoders/blueprint-macro": "^2.3",
-        "cleaniquecoders/laravel-helper": "^1.2",
-        "cleaniquecoders/laravel-observers": "^1.2",
-        "cleaniquecoders/profile": "^1.3",
+        "cleaniquecoders/blade-plus-plus": "^1.1",
+        "cleaniquecoders/blueprint-macro": "^2.4",
+        "cleaniquecoders/laravel-helper": "^1.3",
+        "cleaniquecoders/laravel-observers": "^1.3",
+        "cleaniquecoders/profile": "^1.4",
         "davejamesmiller/laravel-breadcrumbs": "^5.2",
         "doctrine/dbal": "^2.9",
         "fideloper/proxy": "^4.0",
@@ -90,12 +92,5 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ]
-    },
-    "repositories": [{
-        "type": "vcs",
-        "url": "https://github.com/backstageel/sweet-alert"
-    },{
-        "type": "vcs",
-        "url": "https://github.com/nasrulhazim/laravel-auditing"
-    }]
+    }
 }

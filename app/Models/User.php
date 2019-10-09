@@ -4,8 +4,8 @@ namespace App\Models;
 
 use App\Contracts\Datatable as DatatableContract;
 use App\Traits\HasDatatable;
-use Illuminate\Contracts\Auth\MustVerifyEmail  as MustVerifyEmailContract;
 use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
+use Illuminate\Contracts\Auth\MustVerifyEmail  as MustVerifyEmailContract;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;

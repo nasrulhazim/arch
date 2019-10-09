@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'WelcomeController')->name('landing-page');
+Route::get('/', 'LandingPageController')->name('landing-page');
 
 Auth::routes([
     'reset'    => config('auth.enable_password_reset'),
@@ -26,10 +26,10 @@ Route::middleware(['auth'])->group(function () {
     Route::put('password', 'PasswordController')->name('profile.password.update');
     Route::get('notifications', 'NotificationController')->name('notifications');
 
-    if (! isProduction()) {
-        /*
-         * Impersonate
-         */
+    /*
+     * Impersonate
+     */
+    if (isImpersonateEnabled()) {
         Route::impersonate();
     }
 

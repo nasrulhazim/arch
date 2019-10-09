@@ -1,4 +1,4 @@
-<div class="form-group">
+<div class="{{ $input_form_class ?? 'form-group' }}">
     @if(!empty($label))
         <label for="{{ \Illuminate\Support\Str::snake($label) }}" class="{{ $label_class ?? '' }}">
             {{ __($label) }}

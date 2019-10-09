@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
+        <a class="navbar-brand" href="{{ auth()->user() ? route('home') : route('landing-page') }}">
             {{ config('app.name', 'Laravel') }}
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -26,11 +26,13 @@
                         </li>
                     @endif
                 @else
-                    @impersonating
-                        <li class="nav-item m-1">
-                            <a class="btn btn-sm btn-primary" href="{{ route('impersonate.leave') }}">{{ __('Leave Impersonation') }}</a>
-                        </li>
-                    @endImpersonating
+                    @if(isImpersonateEnabled())
+                        @impersonating
+                            <li class="nav-item m-1">
+                                <a class="btn btn-sm btn-primary" href="{{ route('impersonate.leave') }}">{{ __('Leave Impersonation') }}</a>
+                            </li>
+                        @endImpersonating
+                    @endif
                     <li class="nav-item m-1">
                         <a class="btn btn-sm btn-outline-{{ auth()->user()->unreadNotifications->count() > 0 ? 'danger' : 'primary' }} border-0 shadow-none" 
                             href="{{ route('notifications') }}">

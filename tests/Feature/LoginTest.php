@@ -25,7 +25,7 @@ class LoginTest extends TestCase
         $this->artisan('seed:dev');
 
         $response = $this->post('/login', [
-            'email'    => 'Superadmin@app.com',
+            'email'    => 'superadmin@app.com',
             'password' => 'password',
         ]);
 

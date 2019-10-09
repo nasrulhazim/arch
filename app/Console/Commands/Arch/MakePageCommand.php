@@ -35,40 +35,100 @@ class MakePageCommand extends Command
      */
     public function handle()
     {
-        $name = $this->argument('name');
+        // Generate a migration, factory, and resource controller for the model
+        $this->createModel();
 
+        // Generate store and update request
+        $this->createRequest();
+        $this->comment('You need to configure the ' . $this->getInputName() . ' store and update request.');
+
+        // Generate API and Datatable Controller
+        $this->createController();
+
+        // Append route to api, databatable and web
+        $this->createRoute();
+
+        // Generate a seeder class
+        $this->createSeeder();
+
+        // Generate index, show, create, edit and partials/actions view
+        $this->createView();
+
+        // Generate test
+        $this->createTest();
+    }
+
+    private function getInputName()
+    {
+        return $this->argument('name');
+    }
+
+    private function createModel()
+    {
         $this->call('make:model', [
-            'name'  => 'Models\\' . $name,
+            'name'  => 'Models\\' . $this->getInputName(),
             '--all' => true,
         ]);
+    }
+
+    private function createRequest()
+    {
+        $this->call('make:request', [
+            'name' => $this->getInputName() . '\\StoreRequest',
+        ]);
+
+        $this->call('make:request', [
+            'name' => $this->getInputName() . '\\UpdateRequest',
+        ]);
+    }
+
+    private function createController()
+    {
         $this->call('make:controller', [
-            'name'    => 'Api\\' . $name . 'Controller',
-            '--model' => 'Models\\' . $name,
+            'name'    => 'Api\\' . $this->getInputName() . 'Controller',
+            '--model' => 'Models\\' . $this->getInputName(),
         ]);
         $this->call('make:dt', [
-            'name'        => $name . 'Datatable',
-            'model'       => 'Models\\' . $name,
-            'transformer' => 'Datatable\\' . $name . 'Transformer',
+            'name'        => $this->getInputName() . 'Datatable',
+            'model'       => 'Models\\' . $this->getInputName(),
+            'transformer' => 'Datatable\\' . $this->getInputName() . 'Transformer',
         ]);
+    }
+
+    private function createSeeder()
+    {
         $this->call('make:seeder', [
-            'name' => $name . 'TableSeeder',
+            'name' => $this->getInputName() . 'TableSeeder',
+        ]);
+    }
+
+    private function createRoute()
+    {
+        $this->call('make:route', [
+            'name' => $this->getInputName(),
         ]);
         $this->call('make:route', [
-            'name' => $name,
-        ]);
-        $this->call('make:route', [
-            'name'  => $name,
+            'name'  => $this->getInputName(),
             '--api' => true,
         ]);
         $this->call('make:route', [
-            'name'         => $name,
+            'name'         => $this->getInputName(),
             '--breadcrumb' => true,
         ]);
+    }
+
+    private function createView()
+    {
         $this->call('make:view', [
-            'name' => $name,
+            'name' => $this->getInputName(),
         ]);
-        $this->call('make:test', [
-            'name' => $name . 'Test',
+    }
+
+    private function createTest()
+    {
+        $this->call('make:test-crud', [
+            'name'  => $this->getInputName() . 'Test',
+            'model' => 'Models\\' . $this->getInputName(),
         ]);
     }
 }

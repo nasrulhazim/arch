@@ -12,6 +12,7 @@ const mix = require('laravel-mix');
  */
 mix.js('resources/js/app.js', 'public/js')
 	.sass('resources/sass/app.scss', 'public/css')
+	.copy('node_modules/argon-design-system-free/assets', 'public/vendor/argon')
 	.copy('node_modules/sweetalert/dist/sweetalert.min.js', 'public/js')
 	.copy('node_modules/@fortawesome/fontawesome-free/css/all.min.css', 'public/css/font-awesome.css')
 	.copy('node_modules/@fortawesome/fontawesome-free/js/all.min.js', 'public/js/font-awesome.js')
