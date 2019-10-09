@@ -1,7 +1,7 @@
 <?php
 
 return [
-    /**
+    /*
      * Allow enable or disable impersonate from env
      */
     'enabled' => env('ENABLE_IMPERSONATE', false),

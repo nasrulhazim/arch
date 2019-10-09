@@ -6,7 +6,7 @@
 if (! function_exists('isImpersonateEnabled')) {
     function isImpersonateEnabled(): bool
     {
-        if(isProduction()) {
+        if (isProduction()) {
             return false;
         }
 
