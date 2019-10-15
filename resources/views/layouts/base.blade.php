@@ -14,8 +14,23 @@
     @include('layouts.partials.asset-font-awesome')
     @include('layouts.partials.argon')
     @stack('styles')
+    <style type="text/css">
+        .card-header {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+        .breadcrumb {
+            margin-bottom: 0px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+        }
+    </style>
 </head>
 <body>
+    @yield('navigation')
+
     @yield('content')
     
     @yield('footer')

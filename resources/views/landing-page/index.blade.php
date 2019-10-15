@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.app')
 
 @section('content')
   @include('landing-page.partials.header-global')
