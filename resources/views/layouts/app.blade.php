@@ -4,6 +4,8 @@
     @include('layouts.partials.navigation-top')
 @endsection 
 
-@section('footer')
-	@include('layouts.partials.footer')
+@section('content')
+	<div class="main-content mt-5">
+		@yield('main-content')
+	</div>
 @endsection

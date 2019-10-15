@@ -19,7 +19,7 @@
 	</script>
 @endpush
 
-@section('content')
+@section('main-content')
 	<div class="container">
 		@if(auth()->user()->notifications->count() > 0)
 		<div class="row pb-3">

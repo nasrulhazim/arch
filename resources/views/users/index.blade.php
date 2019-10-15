@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('content')
+@section('main-content')
 	@include('components.datatable.asset')
 	<div class="container">
 		<div class="row pb-3">
