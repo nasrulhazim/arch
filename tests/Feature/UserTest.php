@@ -35,7 +35,6 @@ class UserTest extends TestCase
             ->actingAs($this->getSuperadmin())
             ->get('/users/create')
             ->assertStatus(200)
-            ->assertSee('New User')
             ->assertSee('Name')
             ->assertSee('E-Mail Address')
             ->assertSee('Password')
