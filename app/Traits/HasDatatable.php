@@ -27,7 +27,7 @@ trait HasDatatable
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeDatatable($query): Builder
+    public function scopeDatatable(Builder $query): Builder
     {
         return $query->select($this->getDatatableFields());
     }
