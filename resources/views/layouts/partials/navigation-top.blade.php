@@ -33,13 +33,7 @@
                             </li>
                         @endImpersonating
                     @endif
-                    <li class="nav-item m-1">
-                        <a class="btn btn-sm btn-{{ auth()->user()->unreadNotifications->count() > 0 ? 'danger' : 'primary' }} border-0 shadow-none" 
-                            href="{{ route('notifications') }}">
-                            <i class="far fa-bell"></i>
-                            {{ auth()->user()->unreadNotifications->count() > 0 ? auth()->user()->unreadNotifications->count() : '' }}
-                        </a>
-                    </li>
+                    
                     @can('see-all-administration')
                         <li class="nav-item dropdown">
                             <a id="navbarDropdownAdministration" class="nav-link dropdown-toggle" 
@@ -73,6 +67,13 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
                             <a class="dropdown-item" href="{{ route('profile.edit') }}">
                                 <i class="fas fa-address-card mr-3"></i>{{ __('Profile') }}
+                            </a>
+                            <a class="dropdown-item" href="{{ route('notifications') }}">
+                                <i class="far fa-bell"></i>{{ __('Notifications') }}
+                                @if(auth()->user()->hasUnreadNotifications())
+                                    <span class="badge badge-pill badge-danger">{{ auth()->user()->totalUnreadNotifications() }}</span>
+                                @endif
+                            </a>
                             </a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();

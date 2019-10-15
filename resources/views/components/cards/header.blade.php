@@ -1,6 +1,9 @@
 <div class="card-header">
-	@isset($breadcrumb) @breadcrumb @endisset
-	<h5>
-		@includeWhen(isset($icon), 'components.misc.icon', ['icon' => $icon]){{ __($title) }}
-	</h5>
+	@isset($breadcrumb) 
+		@breadcrumb
+	@else
+	 	<h5>
+			@includeWhen(isset($icon), 'components.misc.icon', ['icon' => $icon]){{ __($title) }}
+		</h5>
+	@endisset
 </div>

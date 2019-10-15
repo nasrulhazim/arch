@@ -89,4 +89,24 @@ class User extends Authenticatable implements Auditable, MustVerifyEmailContract
     {
         return 0 === $this->authentications()->count() ? true : false;
     }
+
+    /**
+     * Determined either current user has unread notifications.
+     * 
+     * @return bool
+     */
+    public function hasUnreadNotifications(): bool
+    {
+        return $this->totalUnreadNotifications() > 0;
+    }
+
+    /**
+     * Get total unread notifications.
+     * 
+     * @return int
+     */
+    public function totalUnreadNotifications(): int
+    {
+        return $this->unreadNotifications->count();
+    }
 }
