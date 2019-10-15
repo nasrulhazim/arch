@@ -2,15 +2,9 @@
 
 ## Arch 
 
-<center>
-	<img src="screenshot.png">
-	**Landing Page**
-</center>
+<img src="screenshot.png">
 
-<center>
-	<img src="screenshot-admin.png">
-	**Admin Page**
-</center>
+<img src="screenshot-admin.png">
 
 ## Table of Content
 
