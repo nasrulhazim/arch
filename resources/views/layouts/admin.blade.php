@@ -1,9 +1,16 @@
 @extends('layouts.base')
 
+@push('styles')
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/argon.css') }}">
+@endpush
+
 @section('navigation')
-    @include('layouts.partials.navigation-top')
+    @include('layouts.partials.sidebar')
 @endsection 
 
-@section('footer')
-	@include('layouts.partials.footer')
+@section('content')
+	<div class="main-content">
+		@include('layouts.partials.navbar')
+		@yield('main-content')
+	</div>
 @endsection

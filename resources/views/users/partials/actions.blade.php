@@ -10,13 +10,13 @@
 	</a>
 	@endif
 	@if(auth()->guard('api')->user()->can('destroy-' . $permission))
-	<a href="#" class="btn btn-sm btn-outline-danger" title="{{ __('Delete') }}"
+	<a href="#" class="btn btn-sm btn-danger" title="{{ __('Delete') }}"
        onclick="dtConfirmDelete('{{ $delete_url }}', {{ $id }})">
         <i class="far fa-trash-alt"></i>
     </a>
     @endif
-    @if(! isProduction() && auth()->guard('api')->user()->can('update-' . $permission))
-		<a href="{{ route('impersonate', $user->id) }}" class="btn btn-sm btn-primary" title="{{ __('Impersonate') }}">
+    @if(isImpersonateEnabled())
+		<a href="{{ route('impersonate', $user->id) }}" class="btn btn-sm btn-outline-primary" title="{{ __('Impersonate') }}">
 			<i class="far fa-user"></i>
 		</a>
 	@endif

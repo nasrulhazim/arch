@@ -1,5 +1,5 @@
 @extends('layouts.base')
 
-@section('navigation')
-    @include('layouts.partials.navigation-top')
-@endsection 
+@section('content')
+	@yield('main-content')
+@endsection

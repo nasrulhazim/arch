@@ -1,8 +1,10 @@
+[![CircleCI](https://circleci.com/gh/nasrulhazim/arch.svg?style=svg)](https://circleci.com/gh/nasrulhazim/arch)
+
 ## Arch 
 
-<center><img src="screenshot.png"></center>
+<img src="screenshot.png">
 
-[![CircleCI](https://circleci.com/gh/nasrulhazim/arch.svg?style=svg)](https://circleci.com/gh/nasrulhazim/arch)
+<img src="screenshot-admin.png">
 
 ## Table of Content
 
