@@ -10,7 +10,7 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.2",
+        "php": "^7.3",
         "appstract/laravel-blade-directives": "^1.4",
         "cleaniquecoders/blade-plus-plus": "^1.1",
         "cleaniquecoders/blueprint-macro": "^2.4",
