@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.base')
 
-@section('main-content')
+@section('content')
   @include('landing-page.partials.header-global')
   @include('landing-page.partials.main')
 @endsection

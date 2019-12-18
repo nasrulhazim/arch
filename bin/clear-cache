@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+rm bootstrap/cache/*.php
+composer dumpautoload -o
+php artisan reload:cache

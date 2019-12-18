@@ -1,5 +1,5 @@
 <section class="section section-lg">
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row row-grid justify-content-center">
 			<div class="col-lg-8 text-center">
 				<h2 class="display-3">Arch <span class="text-success">built with awesome packages</span></h2>

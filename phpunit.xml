@@ -23,6 +23,7 @@
         </whitelist>
     </filter>
     <php>
+        <ini name="memory_limit" value="1024M"/>
         <server name="APP_ENV" value="testing"/>
         <server name="APP_KEY" value="base64:ypQZA9/DJ3AebMdu6pa0JM90gyOY9g2g2h2vRUyeigE="/>
         <server name="AUTHENTICATION_LOG_NOTIFY" value="false"/>

@@ -95,22 +95,22 @@
 		<!-- Navigation -->
 		<ul class="navbar-nav mb-md-3">
 		  <li class="nav-item">
-			<a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html">
+			<a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html" target="_blank">
 			  <i class="ni ni-spaceship"></i> Getting started
 			</a>
 		  </li>
 		  <li class="nav-item">
-			<a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/foundation/colors.html">
+			<a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/foundation/colors.html" target="_blank">
 			  <i class="ni ni-palette"></i> Foundation
 			</a>
 		  </li>
 		  <li class="nav-item">
-			<a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.html">
+			<a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.html" target="_blank">
 			  <i class="ni ni-ui-04"></i> Components
 			</a>
 		  </li>
 		  <li class="nav-item">
-			<a class="nav-link" href="https://github.com/nasrulhazim/arch#development">
+			<a class="nav-link" href="https://github.com/nasrulhazim/arch#development" target="_blank">
 			  <i class="ni ni-button-play"></i> Arch
 			</a>
 		  </li>
