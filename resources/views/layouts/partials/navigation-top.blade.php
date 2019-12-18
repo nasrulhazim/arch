@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md">
-    <div class="container">
+    <div class="container-fluid">
         <a class="navbar-brand" href="{{ auth()->user() ? route('home') : route('landing-page') }}">
             {{ config('app.name', 'Laravel') }}
         </a>

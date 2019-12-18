@@ -2,7 +2,7 @@
 
 @section('main-content')
 	@include('components.datatable.asset')
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row pb-3">
 			<div class="col">
 				@buttonnew([

@@ -2,7 +2,7 @@
 
 @section('main-content')
 	@include('components.datatable.asset')
-	<div class="container">
+	<div class="container-fluid">
 		@card
 			@cardheader([
 				'title' => __('Audit Trails'),
