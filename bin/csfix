@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+vendor/bin/php-cs-fixer fix
+
+if [[ `git status --porcelain` ]]; then
+  git add .
+  git commit -m "Apply PHP CS Fixer"
+else
+  echo "Congratulation| You have complied with PSR-2 Code Style!"
+fi
