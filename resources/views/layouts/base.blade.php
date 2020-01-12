@@ -26,6 +26,9 @@
             padding-top: 6px;
             padding-bottom: 6px;
         }
+        .transparent-bg-on-focus:focus {
+            background-color: transparent;
+        }
     </style>
 </head>
 <body>

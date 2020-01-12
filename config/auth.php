@@ -162,5 +162,5 @@ return [
     | Enable or disable account verification.
     |
     */
-    'enable_account_verification' => env('ENABLE_ACCOUNT_VERIFICATION', false),
+    'enable_account_verification' => env('ENABLE_ACCOUNT_VERIFICATION', true),
 ];

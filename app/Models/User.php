@@ -70,10 +70,6 @@ class User extends Authenticatable implements Auditable, MustVerifyEmailContract
 
     /**
      * Datatable scope.
-     *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     *
-     * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeDatatable(Builder $query): Builder
     {
@@ -82,8 +78,6 @@ class User extends Authenticatable implements Auditable, MustVerifyEmailContract
 
     /**
      * Determine either user is first time log into the application.
-     *
-     * @return bool
      */
     public function firstTimeLogin(): bool
     {
@@ -92,8 +86,6 @@ class User extends Authenticatable implements Auditable, MustVerifyEmailContract
 
     /**
      * Determined either current user has unread notifications.
-     * 
-     * @return bool
      */
     public function hasUnreadNotifications(): bool
     {
@@ -102,8 +94,6 @@ class User extends Authenticatable implements Auditable, MustVerifyEmailContract
 
     /**
      * Get total unread notifications.
-     * 
-     * @return int
      */
     public function totalUnreadNotifications(): int
     {

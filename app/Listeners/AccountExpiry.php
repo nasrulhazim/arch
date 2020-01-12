@@ -15,8 +15,6 @@ class AccountExpiry
 
     /**
      * Handle the event.
-     *
-     * @param Attempting $event
      */
     public function handle(Attempting $event)
     {

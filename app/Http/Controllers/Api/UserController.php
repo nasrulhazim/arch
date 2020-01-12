@@ -11,8 +11,6 @@ class UserController extends Controller
     /**
      * Handle the incoming request.
      *
-     * @param \Illuminate\Http\Request $request
-     *
      * @return \Illuminate\Http\Response
      */
     public function profile(Request $request)
@@ -22,8 +20,6 @@ class UserController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param \App\Models\User $user
      *
      * @return \Illuminate\Http\Response
      */

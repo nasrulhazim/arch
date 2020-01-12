@@ -8,8 +8,6 @@ trait HasDatatable
 {
     /**
      * Get Datatable Fields to be display.
-     *
-     * @return array
      */
     public function getDatatableFields(): array
     {
@@ -22,10 +20,6 @@ trait HasDatatable
 
     /**
      * Datatable scope.
-     *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     *
-     * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeDatatable(Builder $query): Builder
     {

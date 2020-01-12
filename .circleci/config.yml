@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # Specify the version you desire here
-      - image: circleci/php:7.3-stretch-node-browsers
+      - image: circleci/php:7.4.0-node-browsers
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - checkout
-      - run: sudo apt-get update && sudo apt-get install -y zlib1g-dev libsqlite3-dev libmagickwand-dev --no-install-recommends && yes '' | sudo pecl install -f imagick || true && sudo docker-php-ext-enable imagick && sudo docker-php-ext-install intl bcmath pcntl gd pdo pdo_sqlite zip exif mbstring
+      - run: sudo apt-get update && sudo apt-get install -y zlib1g-dev libsqlite3-dev libmagickwand-dev --no-install-recommends && yes '' | sudo pecl install -f imagick || true && sudo apt-get install libonig-dev && sudo docker-php-ext-enable imagick && sudo docker-php-ext-install intl bcmath pcntl gd pdo pdo_sqlite zip exif mbstring
 
       # Download and cache dependencies
 
@@ -37,7 +37,7 @@ jobs:
       - save_cache:
           key: composer-v1-{{ checksum "composer.lock" }}
           paths:
-            - $HOME/.composer/cache
+            - vendor
 
       # node cache
 
@@ -53,7 +53,7 @@ jobs:
       #       - ~/.yarn
 
       # run tests with phpunit or codecept
-      - run: ./vendor/bin/phpunit
+      - run: ./vendor/bin/phpunit -d memory_limit=1024M
       - store_test_results:
           path: tests/_output
       - store_artifacts:

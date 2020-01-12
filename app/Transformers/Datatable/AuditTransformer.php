@@ -8,8 +8,6 @@ use League\Fractal\TransformerAbstract;
 class AuditTransformer extends TransformerAbstract
 {
     /**
-     * @param \App\Models\Audit $model
-     *
      * @return array
      */
     public function transform(Audit $model)

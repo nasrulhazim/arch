@@ -40,6 +40,7 @@
         "yajra/laravel-datatables-oracle": "~9.6"
     },
     "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.15",
         "barryvdh/laravel-debugbar": "^3.2",
         "fzaninotto/faker": "^1.4",
         "laravel/dusk": "^5.5",

@@ -24,8 +24,6 @@ class AuditController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\Models\Audit $audit
-     *
      * @return \Illuminate\Http\Response
      */
     public function show(Audit $audit)
