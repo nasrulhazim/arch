@@ -5,7 +5,7 @@
 				<div class="input-group-prepend">
 					<span class="input-group-text"><i class="fas fa-search"></i></span>
 				</div>
-				<input class="form-control" placeholder="Search" type="text">
+				<input class="form-control transparent-bg-on-focus" placeholder="Search" type="text">
 			</div>
 		</div>
 	</form>
