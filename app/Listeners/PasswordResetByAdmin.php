@@ -15,8 +15,6 @@ class PasswordResetByAdmin
 
     /**
      * Handle the event.
-     *
-     * @param PasswordReset $event
      */
     public function handle(PasswordReset $event)
     {

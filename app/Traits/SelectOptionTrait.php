@@ -8,8 +8,6 @@ trait SelectOptionTrait
 {
     /**
      * Datatable scope.
-     *
-     * @param \Illuminate\Database\Eloquent\Builder $query
      */
     public function scopeSelectOptions(Builder $query)
     {

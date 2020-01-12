@@ -64,8 +64,6 @@ abstract class Page extends BasePage
 
     /**
      * Assert that the browser is on the page.
-     *
-     * @param \Laravel\Dusk\Browser $browser
      */
     public function assert(Browser $browser)
     {

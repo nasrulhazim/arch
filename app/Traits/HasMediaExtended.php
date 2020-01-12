@@ -15,9 +15,6 @@ trait HasMediaExtended
     /**
      * Get the last media item of a media collection.
      *
-     * @param string $collectionName
-     * @param array  $filters
-     *
      * @return Media|null
      */
     public function getLastMedia(string $collectionName = 'default', array $filters = [])
@@ -62,8 +59,6 @@ trait HasMediaExtended
 
     /**
      * List of dimension and it's collection name.
-     *
-     * @return array
      */
     public function getMediaDimensions(): array
     {

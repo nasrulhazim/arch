@@ -12,10 +12,6 @@ class Audit extends \OwenIt\Auditing\Models\Audit implements DatatableContract
 
     /**
      * Datatable scope.
-     *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     *
-     * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeDatatable(Builder $query): Builder
     {
