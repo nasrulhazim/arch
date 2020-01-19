@@ -9,12 +9,12 @@
 				'breadcrumb' => false
 			])
 			@cardbody 
-				<form method="POST" action="{{ route('ROUTE_NAME.update', $ROUTE_NAME) }}">
+				<form method="POST" action="{{ route('ROUTE_NAME.update', $ROUTE_VARIABLE) }}">
                     @csrf @method('PUT')
 
 					@buttonlink([
 	                    'label' => 'Cancel',
-	                    'url' => route('ROUTE_NAME.show', $ROUTE_NAME),
+	                    'url' => route('ROUTE_NAME.show', $ROUTE_VARIABLE),
 	                ])
 
 	                @buttonsubmit([
