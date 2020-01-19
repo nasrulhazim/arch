@@ -57,13 +57,14 @@ class ViewCommand extends Command
         }
 
         $find = [
-            'TITLE', 'DATATABLE_ID', 'DATATABLE_ROUTE_NAME', 'ROUTE_NAME',
+            'TITLE', 'DATATABLE_ID', 'DATATABLE_ROUTE_NAME', 'ROUTE_NAME', 'ROUTE_VARIABLE',
         ];
         $replace = [
             Str::title($name),
             Str::snake($name),
             $this->getDatatableRouteName(),
             Str::slug($basename, '.'),
+            Str::snake($basename),
         ];
         $stubs = $this->getStubs();
 

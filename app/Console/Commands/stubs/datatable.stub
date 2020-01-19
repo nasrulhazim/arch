@@ -2,6 +2,8 @@
 
 namespace DummyNamespace;
 
+use App\Http\Datatables\Datatable;
+
 class DummyClass extends Datatable
 {
     /**
