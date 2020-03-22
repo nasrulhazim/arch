@@ -10,7 +10,7 @@
                 </div>
             @endisset
 
-            @isset($modal_footer)            
+            @isset($modal_body)            
                 <div class="modal-body">
                     {!! $modal_body !!}
                 </div>

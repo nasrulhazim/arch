@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7cfb987674ba9175b53b1d7b09b90528",
+    "content-hash": "798536590db450485209a632aedcaeaa",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -64,16 +64,16 @@
         },
         {
             "name": "cleaniquecoders/blade-plus-plus",
-            "version": "v2.0.0",
+            "version": "v2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cleaniquecoders/blade-plus-plus.git",
-                "reference": "83860c2e72da29de417e9efe928a77603072dc58"
+                "reference": "22284d715ee229ba7f8715442dfbf4a097291959"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cleaniquecoders/blade-plus-plus/zipball/83860c2e72da29de417e9efe928a77603072dc58",
-                "reference": "83860c2e72da29de417e9efe928a77603072dc58",
+                "url": "https://api.github.com/repos/cleaniquecoders/blade-plus-plus/zipball/22284d715ee229ba7f8715442dfbf4a097291959",
+                "reference": "22284d715ee229ba7f8715442dfbf4a097291959",
                 "shasum": ""
             },
             "require": {
@@ -111,7 +111,7 @@
                 }
             ],
             "description": "Extended Laravel Blade Directives",
-            "time": "2020-03-05T00:54:47+00:00"
+            "time": "2020-03-22T16:21:20+00:00"
         },
         {
             "name": "cleaniquecoders/blueprint-macro",

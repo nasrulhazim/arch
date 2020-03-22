@@ -11,7 +11,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
-        "cleaniquecoders/blade-plus-plus": "^2.0",
+        "cleaniquecoders/blade-plus-plus": "^2.1",
         "cleaniquecoders/blueprint-macro": "^3.0",
         "cleaniquecoders/laravel-helper": "^2.0",
         "cleaniquecoders/laravel-observers": "^2.0",

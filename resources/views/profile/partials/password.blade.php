@@ -12,7 +12,7 @@
                 <div class="col">
                     <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
                     
-                    @include('laravel-blade-directives::components.forms.error', ['key' => 'password'])
+                    @inputError(['key' => 'password'])
                 </div>
             </div>
 

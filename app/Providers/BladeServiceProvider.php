@@ -25,14 +25,6 @@ class BladeServiceProvider extends ServiceProvider
     private function bootBladeDirectives()
     {
         /*
-         * Cards
-         */
-        Blade::component('components.cards.base', 'card');
-        Blade::component('components.cards.body', 'cardbody');
-        Blade::component('components.cards.footer', 'cardfooter');
-        Blade::include('components.cards.header', 'cardheader');
-
-        /*
          * Buttons
          */
         Blade::include('components.buttons.base', 'buttonbase');
