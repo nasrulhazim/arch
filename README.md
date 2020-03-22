@@ -20,6 +20,7 @@ Laravel    | Arch
 :----------|:----------
  5.8.x     | 1.1.x
  6.x       | 2.x 
+ 7.x 	   | 3.x
 
 ## Quick Installation
 
@@ -27,43 +28,35 @@ Laravel    | Arch
 $ composer create-project nasrulhazim/arch project-name --prefer-dist
 ```
 
+Navigate to `project-name` and duplicate `.env.example` to `.env`. Update your configuration then run the following command:
+
+```
+$ bin/install
+```
+
+This will install all the Arch dependencies - backend and frontend, and also setup migration & seeders.
+
 ## Development
 
-### Available artisan commands for development
+Following are the commands available for your development:
 
-Reload all caches:
+#### Bash Scripts
 
-```
-$ php artisan reload:cache
-```
+Arch come with numbers of bash scripts, to simplify development tasks. This scripts only works in Linux environment:
 
-Reload database and seed:
+Following are the available bash scripts: 
 
-```
-$ php artisan reload:db
-```
+1. `bin/changelog` - Create changelog file based on give date range.
+2. `bin/clear-cache` - Clear all related caches available in the Arch.
+3. `bin/csfix` - Apply PHP CS Fixer and commit.
+4. `bin/install` - Install Arch.
+5. `bin/reload-db` - Recache & reload database.
+6. `bin/serve` - Setup Valet link, secure the domain and open the domain.
+7. `bin/update-dependencies` - Run `composer update` and commit if any changes.
 
-Seed development data:
+#### Arch Page 
 
-```
-$ php artisan seed:dev
-```
-
-Create transformer class:
-
-```
-$ php artisan make:transformer UserTransformer Models\\User
-```
-
-Create datatable class:
-
-```
-$ php artisan make:dt UserDt Models\\User Datatable\\UserTransformer
-```
-
-#### Arch Commands
-
-Currently there is only one command available `arch:page` which create necessary model, migration, factory, seeder, controller for web and API, setting up routes for API, web, datatable and breadcrumb and create all main views - index, show, create, edit and partis/actions.
+Is a command create necessary model, migration, factory, seeder, controller for web and API, setting up routes for API, web, datatable and breadcrumb and create all main views - index, show, create, edit and partis/actions.
 
 You just need to run following command to create a page.
 
@@ -71,6 +64,36 @@ You may want to check and update generated files to meet the common practice.
 
 ```
 $ php artisan arch:page Module
+```
+
+#### Reload All Caches
+
+```
+$ php artisan reload:cache
+```
+
+#### Reload Database and Seed
+
+```
+$ php artisan reload:db
+```
+
+#### Seed Development Data
+
+```
+$ php artisan seed:dev
+```
+
+#### Create Transformer Class
+
+```
+$ php artisan make:transformer UserTransformer Models\\User
+```
+
+#### Create Datatable Class
+
+```
+$ php artisan make:dt UserDt Models\\User Datatable\\UserTransformer
 ```
 
 ## Contributing to the Arch
