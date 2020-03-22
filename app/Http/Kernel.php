@@ -44,7 +44,7 @@ class Kernel extends HttpKernel
             \RenatoMarinho\LaravelPageSpeed\Middleware\TrimUrls::class,
             \RenatoMarinho\LaravelPageSpeed\Middleware\RemoveQuotes::class,
             // \RenatoMarinho\LaravelPageSpeed\Middleware\CollapseWhitespace::class,
-            \UxWeb\SweetAlert\ConvertMessagesIntoSweetAlert::class,
+            \RealRashid\SweetAlert\ToSweetAlert::class,
             \Laravel\Passport\Http\Middleware\CreateFreshApiToken::class,
         ],
 

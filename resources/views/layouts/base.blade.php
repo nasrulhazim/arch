@@ -40,8 +40,7 @@
     
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/sweetalert.min.js') }}"></script>
-    @include('sweet::alert')
+    @include('sweetalert::alert')
     @routes
     @stack('scripts')
 </body>
