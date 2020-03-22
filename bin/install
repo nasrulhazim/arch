@@ -1,10 +1,23 @@
 #!/usr/bin/env bash
 
-composer install
-cp .env.example .env
-php artisan key:generate
-php artisan storage:link
-php artisan reload:cache
-php artisan reload:db
-php artisan passport:install
-yarn install
+VENDOR=vendor/
+if [ ! -d "$VENDOR" ]; then
+    composer install
+fi
+
+ENV=.env
+if [ ! -f "$ENV" ]; then
+    cp .env.example .env
+fi
+
+NODE_MODULES=node_modules/
+if [ ! -d "$NODE_MODULES" ]; then
+	if type "yarn" > /dev/null; then
+		yarn install
+	else  
+		echo "You need to install Yarn in order to install frontend dependecies." 
+	fi
+fi
+
+# php artisan arch:install
+bin/serve
