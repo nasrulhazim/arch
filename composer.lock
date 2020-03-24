@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "798536590db450485209a632aedcaeaa",
+    "content-hash": "52bb9359ce737cf91d2b401ceb9132a7",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -3473,11 +3473,17 @@
         },
         {
             "name": "owen-it/laravel-auditing",
-            "version": "dev-laravel-7",
+            "version": "v10.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/nasrulhazim/laravel-auditing",
-                "reference": "7068e2c2223e139ff898d93487ab87ae0242ddfe"
+                "url": "https://github.com/owen-it/laravel-auditing.git",
+                "reference": "50b0d9bc8d47a6fd873427c012c6710850e73a34"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/owen-it/laravel-auditing/zipball/50b0d9bc8d47a6fd873427c012c6710850e73a34",
+                "reference": "50b0d9bc8d47a6fd873427c012c6710850e73a34",
+                "shasum": ""
             },
             "require": {
                 "illuminate/console": "^5.8|^6.0|^7.0",
@@ -3510,11 +3516,7 @@
                     "OwenIt\\Auditing\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "OwenIt\\Auditing\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3535,8 +3537,8 @@
             "description": "Audit changes of your Eloquent models in Laravel/Lumen",
             "homepage": "http://laravel-auditing.com",
             "keywords": [
-                "accountability",
-                "audit",
+                "Accountability",
+                "Audit",
                 "auditing",
                 "changes",
                 "eloquent",
@@ -3550,11 +3552,7 @@
                 "revision",
                 "tracking"
             ],
-            "support": {
-                "issues": "https://github.com/owen-it/laravel-auditing/issues",
-                "source": "https://github.com/owen-it/laravel-auditing"
-            },
-            "time": "2020-03-05T07:20:24+00:00"
+            "time": "2020-03-23T22:49:02+00:00"
         },
         {
             "name": "paragonie/random_compat",
