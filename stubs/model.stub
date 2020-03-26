@@ -1,0 +1,10 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Models\Base as Model;
+
+class {{ class }} extends Model
+{
+    //
+}
