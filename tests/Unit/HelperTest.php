@@ -16,10 +16,22 @@ class HelperTest extends TestCase
         'permission',
 
         /*
-         * global
+         * auth
+         */
+        'accountExpiryCheckingEnabled',
+        'passwordExpiryCheckingEnabled',
+        'isFirstTimeLoginCheckingEnabled',
+
+        /*
+         * env
          */
         'isProduction',
         'isTesting',
+
+        /*
+         * global
+         */
+        'isImpersonateEnabled',
         'isMailEnabled',
         'locales',
         'gravatar',
@@ -29,6 +41,11 @@ class HelperTest extends TestCase
          * navigation
          */
         'isActiveNav',
+
+        /*
+         * str
+         */
+        'classNameToTitleCase',
     ];
 
     /** @test */
