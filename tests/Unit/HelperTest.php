@@ -55,4 +55,17 @@ class HelperTest extends TestCase
             $this->assertHelperExist($helper);
         }
     }
+
+    /** @test */
+    public function classNameToTitleCase_can_cast_class_name_to_title_case()
+    {
+        $data = [
+            \App\Models\User::class        => 'User',
+            \App\Models\UserProfile::class => 'User Profile',
+            \App\Models\UserAddress::class => 'User Address',
+        ];
+        foreach ($data as $class => $expected) {
+            $this->assertEquals($expected, classNameToTitleCase($class));
+        }
+    }
 }
