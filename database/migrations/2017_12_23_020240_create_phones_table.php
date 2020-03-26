@@ -12,7 +12,7 @@ class CreatePhonesTable extends Migration
     public function up()
     {
         Schema::create('phones', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->hashslug();
             $table->belongsTo('phone_types')->default(\CleaniqueCoders\Profile\Models\PhoneType::HOME);
             $table->unsignedInteger('phoneable_id');

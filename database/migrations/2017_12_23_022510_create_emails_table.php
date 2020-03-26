@@ -12,7 +12,7 @@ class CreateEmailsTable extends Migration
     public function up()
     {
         Schema::create('emails', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->hashslug();
             $table->unsignedInteger('emailable_id');
             $table->string('emailable_type');

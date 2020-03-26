@@ -12,7 +12,7 @@ class CreateAddressesTable extends Migration
     public function up()
     {
         Schema::create('addresses', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->hashslug();
             $table->nullableBelongsTo('countries');
             $table->unsignedInteger('addressable_id');
