@@ -15,7 +15,7 @@ use Spatie\MediaLibrary\HasMedia\HasMedia as MediaContract;
 
 class Base extends Model implements Auditable, DatatableContract, MediaContract, HasUuidContract
 {
-	use HasUuid;
+    use HasUuid;
     use \OwenIt\Auditing\Auditable;
     use HasDatatable;
     use SelectOptionTrait;

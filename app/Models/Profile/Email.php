@@ -8,5 +8,5 @@ use CleaniqueCoders\Profile\Models\Email as Base;
 
 class Email extends Base implements HasUuidContract
 {
-	use HasUuid;
+    use HasUuid;
 }

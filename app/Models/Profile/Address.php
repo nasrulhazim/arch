@@ -8,5 +8,5 @@ use CleaniqueCoders\Profile\Models\Address as Base;
 
 class Address extends Base implements HasUuidContract
 {
-	use HasUuid;
+    use HasUuid;
 }

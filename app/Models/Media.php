@@ -11,7 +11,7 @@ use OwenIt\Auditing\Contracts\Auditable as AuditableContract;
 
 class Media extends \Spatie\MediaLibrary\Models\Media implements DatatableContract, AuditableContract, HasUuidContract
 {
-	use HasUuid;
+    use HasUuid;
     use AuditableTrait;
     use DatatableTrait;
 }

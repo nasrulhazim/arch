@@ -8,5 +8,5 @@ use CleaniqueCoders\Profile\Models\Website as Base;
 
 class Website extends Base implements HasUuidContract
 {
-	use HasUuid;
+    use HasUuid;
 }
