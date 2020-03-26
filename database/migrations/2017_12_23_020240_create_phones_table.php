@@ -13,6 +13,7 @@ class CreatePhonesTable extends Migration
     {
         Schema::create('phones', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->uuid('uuid')->default('-');
             $table->hashslug();
             $table->belongsTo('phone_types')->default(\CleaniqueCoders\Profile\Models\PhoneType::HOME);
             $table->unsignedInteger('phoneable_id');

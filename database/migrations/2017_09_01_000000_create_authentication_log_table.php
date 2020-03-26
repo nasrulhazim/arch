@@ -13,6 +13,7 @@ class CreateAuthenticationLogTable extends Migration
     {
         Schema::create('authentication_log', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->uuid('uuid')->default('-');
             $table->morphs('authenticatable');
             $table->string('ip_address', 45)->nullable();
             $table->text('user_agent')->nullable();

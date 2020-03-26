@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "52bb9359ce737cf91d2b401ceb9132a7",
+    "content-hash": "d074e1cc7cd6311ba956994245696f36",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -282,6 +282,63 @@
                 "package"
             ],
             "time": "2020-03-05T00:45:43+00:00"
+        },
+        {
+            "name": "cleaniquecoders/laravel-uuid",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cleaniquecoders/laravel-uuid.git",
+                "reference": "cec67f5a7ea3de355d369890a9fbea2c01ddb372"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cleaniquecoders/laravel-uuid/zipball/cec67f5a7ea3de355d369890a9fbea2c01ddb372",
+                "reference": "cec67f5a7ea3de355d369890a9fbea2c01ddb372",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/dbal": "^2.10",
+                "illuminate/auth": "^5.5|^5.6|^5.7|^5.8|^6.0|^7.0",
+                "illuminate/support": "^5.5|^5.6|^5.7|^5.8|^6.0|^7.0",
+                "php": ">=7.3"
+            },
+            "require-dev": {
+                "orchestra/testbench": "3.5.*|3.6.*|3.7.*|3.8.*|4.*|5.*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "CleaniqueCoders\\LaravelUuid\\LaravelUuidServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "CleaniqueCoders\\LaravelUuid\\": "src/"
+                },
+                "files": [
+                    "src/Support/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nasrul Hazim",
+                    "email": "nasrulhazim.m@gmail.com"
+                }
+            ],
+            "description": "Use UUID for your Laravel application.",
+            "keywords": [
+                "laravel",
+                "package",
+                "uuid"
+            ],
+            "time": "2020-03-24T19:40:08+00:00"
         },
         {
             "name": "cleaniquecoders/profile",

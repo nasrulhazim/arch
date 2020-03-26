@@ -15,6 +15,7 @@
         "cleaniquecoders/blueprint-macro": "^3.0",
         "cleaniquecoders/laravel-helper": "^2.0",
         "cleaniquecoders/laravel-observers": "^2.0",
+        "cleaniquecoders/laravel-uuid": "^1.0",
         "cleaniquecoders/profile": "^2.0",
         "davejamesmiller/laravel-breadcrumbs": "^5.2",
         "doctrine/dbal": "^2.9",

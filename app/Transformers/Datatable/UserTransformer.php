@@ -17,10 +17,10 @@ class UserTransformer extends TransformerAbstract
             'email'  => $user->email,
             'action' => view('users.partials.actions', [
                 'permission' => 'user',
-                'view_url'   => route('users.show', $user->id),
-                'edit_url'   => route('users.edit', $user->id),
-                'delete_url' => route('api.user.destroy', $user->id),
-                'id'         => $user->id,
+                'view_url'   => route('users.show', $user->uuid),
+                'edit_url'   => route('users.edit', $user->uuid),
+                'delete_url' => route('api.user.destroy', $user->uuid),
+                'id'         => $user->uuid,
                 'user'       => $user,
             ])->__toString(),
         ];

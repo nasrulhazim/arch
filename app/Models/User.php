@@ -4,6 +4,8 @@ namespace App\Models;
 
 use App\Contracts\Datatable as DatatableContract;
 use App\Traits\HasDatatable;
+use CleaniqueCoders\LaravelUuid\Contracts\HasUuid as HasUuidContract;
+use CleaniqueCoders\LaravelUuid\Traits\HasUuid;
 use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
 use Illuminate\Contracts\Auth\MustVerifyEmail  as MustVerifyEmailContract;
 use Illuminate\Database\Eloquent\Builder;
@@ -15,8 +17,9 @@ use OwenIt\Auditing\Contracts\Auditable;
 use Spatie\Permission\Traits\HasRoles;
 use Yadahan\AuthenticationLog\AuthenticationLogable;
 
-class User extends Authenticatable implements Auditable, MustVerifyEmailContract, DatatableContract
+class User extends Authenticatable implements Auditable, MustVerifyEmailContract, DatatableContract, HasUuidContract
 {
+    use HasUuid;
     use HasDatatable;
     use HasApiTokens;
     use HasRoles;

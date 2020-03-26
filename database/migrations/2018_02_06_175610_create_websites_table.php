@@ -13,6 +13,7 @@ class CreateWebsitesTable extends Migration
     {
         Schema::create('websites', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->uuid('uuid')->default('-');
             $table->hashslug();
             $table->unsignedInteger('websiteable_id');
             $table->string('websiteable_type');

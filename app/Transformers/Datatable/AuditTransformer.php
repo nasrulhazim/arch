@@ -17,7 +17,7 @@ class AuditTransformer extends TransformerAbstract
             'user'     => $model->user->name,
             'datetime' => $model->created_at->format('H:i:s, d-m-Y'),
             'action'   => view('audit.partials.actions', [
-                'view_url'   => route('audit.show', $model->id),
+                'view_url'   => route('audit.show', $model->uuid),
                 'permission' => 'audit',
             ])->__toString(),
         ];

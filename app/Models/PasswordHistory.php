@@ -2,10 +2,14 @@
 
 namespace App\Models;
 
+use CleaniqueCoders\LaravelUuid\Contracts\HasUuid as HasUuidContract;
+use CleaniqueCoders\LaravelUuid\Traits\HasUuid;
 use Illuminate\Support\Facades\Hash;
 
-class PasswordHistory extends Base
+class PasswordHistory extends Base implements HasUuidContract
 {
+    use HasUuid;
+
     public function scopeUser($query, $value)
     {
         return $query->where('user_id', $value);
